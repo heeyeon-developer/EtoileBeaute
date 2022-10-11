@@ -8,24 +8,26 @@ import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.semi.dto.QuestDTO;
 import com.semi.dto.ReviewDTO;
+import com.semi.service.QuestService;
 import com.semi.service.ReviewService;
 
 @Controller
-public class ReviewController {
+public class QnAController {
 
 	@Autowired
-	ReviewService service;
+	QuestService service;
 	
-	@RequestMapping("/review")
-	public String review(Model model) {
+	@RequestMapping("/qna")
+	public String quest(Model model) {
 		
-		List<ReviewDTO> list = null;
+		List<QuestDTO> list = null;
 		
 		try {
 			list = service.getall();
 			model.addAttribute("list",list);
-			model.addAttribute("center","review");
+			model.addAttribute("center","quest");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

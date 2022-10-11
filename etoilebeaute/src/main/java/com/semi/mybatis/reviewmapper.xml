@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.semi.mapper.ReviewMapper">
+	
+	<select id="select" parameterType="Integer" resultType="reviewDTO">
+		SELECT * FROM review WHERE reviewid=#{reviewid}
+	</select>
+	<select id="selectall" resultType="reviewDTO">
+		SELECT * FROM review
+	</select>
+	<insert id="insert" parameterType="reviewDTO">
+		INSERT INTO review VALUES (NULL,#{custid},#{review_text},#{star},dsat)
+	</insert>
+	<update id="update" parameterType="reviewDTO">
+		UPDATE review SET custid=#{custid}, review_text=#{review_text}, star=#{star}, dsat=#{dsat} WHERE reviewid=#{reviewid}
+	</update>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM review WHERE reviewid=#{reviewid}
+	</delete>
+	
+</mapper>

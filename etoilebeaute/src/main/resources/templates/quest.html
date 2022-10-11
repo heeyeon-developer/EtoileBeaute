@@ -26,7 +26,7 @@
                 <div class="row">
                     <div class="col-12 col-lg-12">
                         <div class="cart-title mt-50">
-                            <h2>Review List</h2>
+                            <h2>Quest List</h2>
                         </div>
 
                         <div class="cart-table clearfix">
@@ -34,9 +34,9 @@
                                 <thead>
                                     <tr>
                                         <th>작성자</th>
-                                        <th>리뷰 내용</th>
-                                        <th>제품 만족도</th>
-                                        <th>배송 만족도</th>
+                                        <th>제목</th>
+                                        <th>질문 등록일</th>
+                                        <th>답변 여부</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -45,10 +45,10 @@
                                             <h5 th:text="${i.custid}">White Modern Chair</h5>
                                         </td>
                                         <td class="price">
-                                            <span th:text="${i.review_text}">$130</span>
+                                            <span th:text="${i.title}">$130</span>
                                         </td>
-                                        <td th:text="${i.star}"></td>
-                                        <td th:text="${i.dsat}"></td>
+                                        <td th:text="${i.rdate}"></td>
+                                        <td>답변 여부</td>
                                     </tr>
                                 </tbody>
                             </table>

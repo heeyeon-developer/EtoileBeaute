@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.semi.mapper.QuestMapper">
+	
+	<select id="select" parameterType="Integer" resultType="questDTO">
+		SELECT * FROM quest WHERE questid=#{questid}
+	</select>
+	<select id="selectall" resultType="questDTO">
+		SELECT * FROM quest
+	</select>
+	<insert id="insert" parameterType="questDTO">
+		INSERT INTO quest VALUES (NULL,#{itemid},#{custid},#{title},#{quest_text},NOW())
+	</insert>
+	<update id="update" parameterType="questDTO">
+		UPDATE quest SET itemid=#{itemid}, custid=#{custid}, title=#{title},quest_text=#{quest_text}, rdate=NOW() WHERE questid=#{questid}
+	</update>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM quest WHERE questid=#{questid}
+	</delete>
+	
+</mapper>
