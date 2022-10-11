@@ -13,4 +13,12 @@ public class MainController {
 		model.addAttribute("center","shop");
 		return "index";
 	}
+	@RequestMapping("/cart")
+	public String cart(Model model) {
+		model.addAttribute("center","cart");
+		return "index";
+	}
+	
+	
+	
 }
