@@ -1,0 +1,106 @@
+<meta charset="utf-8">
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+<script>
+window.Kakao.init('a58492d868cec0ea4732a32bd6505ef1');
+
+function kakaoLogin() {
+    window.Kakao.Auth.login({
+        scope: 'profile_nickname',   //동의항목 페이지에 있는 개인정보 보호 테이블의 활성화된 ID값을 넣습니다.
+        success: function(response) {
+            console.log(response) // 로그인 성공하면 받아오는 데이터
+            window.Kakao.API.request({ // 사용자 정보 가져오기 
+                url: '/v2/user/me',
+                success: (res) => {
+                    const kakao_account = res.kakao_account;
+                    console.log(kakao_account)
+                }
+            });
+             window.location.href='/index' //리다이렉트 되는 코드
+        },
+        fail: function(error) {
+            console.log(error);
+        }
+    });
+}
+
+
+
+const login = document.querySelector('#kakaoLogin');
+login.addEventListener('click', kakaoLogin);
+
+
+</script>
+
+
+
+
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+.container{
+
+	padding:100px;
+	margin:100px;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-weight: 400;
+    font-size: 12px;
+    height: 55px
+}
+
+
+#title_text{
+	padding-top:10px;
+	font-family: 'Nanum Gothic', sans-serif;
+    background-color:none;
+}
+
+
+
+</style>
+
+<script>
+$(document).ready(function(){
+	$('#login_btn').click(function(){
+		
+		$('#login_form').attr({
+			method:'post',
+			action:'/loginimpl'});
+		$('#login_form').submit();
+		
+	});
+	
+});
+</script>
+
+
+
+
+<div class="container">
+	<div class="col-sm-5">
+		<div id="title_text">
+		
+			<h3 style="font-size:30px;">어서오세요!환영합니다!</h3>
+		
+		</div>
+
+		<form id="login_form">
+			<div class="form-group">
+				<label for="id">ID:</label> <input type="text" class="form-control"
+					id="id" placeholder="Enter ID" name="id">
+			</div>
+			<div class="form-group">
+				<label for="pwd">Password:</label> <input type="password"
+					class="form-control" id="pwd" placeholder="Enter password"
+					name="pwd">
+			</div>
+			<button id="login_btn" class="btn btn-info">LOGIN</button>
+	 <a href="javascript:kakaoLogin();"><img src="img/kakao_login.png" alt="카카오계정 로그인" style=" weight:40px; height: 40px;"/></a>
+		</form>
+	</div>
+</div>
+
+

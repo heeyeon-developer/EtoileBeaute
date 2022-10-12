@@ -21,6 +21,8 @@
     <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
     <script src="/js/jquery/jquery-2.2.4.min.js"></script>
 
+    <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
+    <script src="/js/jquery/jquery-2.2.4.min.js"></script>
 </head>
 
 <body>
@@ -75,15 +77,20 @@
                     <li class="active"><a href="/">Home</a></li>
                     <li><a href="/shop">Shop</a></li>
                     <li><a href="/cart">Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
                     <li><a href="/review">ReviewTest</a></li>
                     <li><a href="/qna">Q&A</a></li>
+                    <li></li>
                 </ul>
             </nav>
-            <!-- Button Group -->
-            <div class="amado-btn-group mt-30 mb-100">
+            <!-- Button Group --><!--로그인 하지 않았을때  -->
+            <div class="amado-btn-group mt-30 mb-100" th:if="${session.logincust == null}">
                 <a href="/login" class="btn amado-btn mb-15">Login</a>
                 <a href="/register" class="btn amado-btn active">Register</a>
+            </div>
+            <!-- Button Group --><!--로그인 성공시  -->
+            <div class="amado-btn-group mt-30 mb-100" th:if="${session.logincust != null}">
+                <a href="/logout" class="btn amado-btn mb-15">Logout</a>
+                
             </div>
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
