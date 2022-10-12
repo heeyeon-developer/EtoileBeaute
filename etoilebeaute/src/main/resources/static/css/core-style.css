@@ -7,6 +7,7 @@
 @import url(../css/jquery-ui.min.css);
 @import url(../css/nice-select.css);
 @import url(../css/font-awesome.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500&family=Nanum+Gothic&display=swap');
 @font-face {
   font-family: 'helveticaneuebold';
   src: url("../fonts/helvetica_neu_bold-webfont.woff2") format("woff2"), url("../fonts/helvetica_neu_bold-webfont.woff") format("woff");
@@ -86,6 +87,11 @@ ul li ul li{
  	background-color:none;
  }
 
+
+ div h6{
+ 
+ font-family:'Arimo', sans-serif;
+ }
 
 img {
   height: auto;
