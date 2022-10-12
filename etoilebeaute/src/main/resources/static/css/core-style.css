@@ -336,13 +336,13 @@ img {
   padding: 0 7px;
   font-size: 18px;
   line-height: 56px;
-  background-color: white;
+  background-color:white;
   font-weight: 400; }
   
   
   
   /* 레지스터 버튼 디자인 요소 */
-  .amado-btn.active .amado-btn:hover .amado-btn:focus{
+  .amado-btn.active .amado-btn:hover{
     font-size: 40px;
     color:black;
     background-color:white; }
