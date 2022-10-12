@@ -1,76 +1,76 @@
-
-    <!-- Search Wrapper Area Start -->
-    <div class="search-wrapper section-padding-100">
-        <div class="search-close">
-            <i class="fa fa-close" aria-hidden="true"></i>
+<meta charset="utf-8">
+<!-- Search Wrapper Area Start -->
+<div class="search-wrapper section-padding-100">
+    <div class="search-close">
+        <i class="fa fa-close" aria-hidden="true"></i>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="search-content">
+                    <form action="#" method="get">
+                        <input type="search" name="search" id="search" placeholder="Type your keyword...">
+                        <button type="submit"><img src="img/core-img/search.png" alt=""></button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="container">
+    </div>
+</div>
+<!-- Search Wrapper Area End -->
+
+<!-- ##### Main Content Wrapper Start ##### -->
+<div class="main-content-wrapper clearfix">
+    <div class="cart-table-area section-padding-10">
+        <div>
             <div class="row">
-                <div class="col-12">
-                    <div class="search-content">
-                        <form action="#" method="get">
-                            <input type="search" name="search" id="search" placeholder="Type your keyword...">
-                            <button type="submit"><img src="img/core-img/search.png" alt=""></button>
-                        </form>
+                <div class="col-12 col-lg-12">
+                    <div class="cart-title mt-50">
+                        <h2>Review List</h2>
+                    </div>
+
+                    <div class="cart-table clearfix">
+                        <table class="table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th>작성자</th>
+                                    <th>리뷰 내용</th>
+                                    <th>제품 만족도</th>
+                                    <th>배송 만족도</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="i:${list}">
+                                    <td class="cart_product_desc">
+                                        <h5 th:text="${i.custid}">White Modern Chair</h5>
+                                    </td>
+                                    <td class="price">
+                                        <span th:text="${i.review_text}">$130</span>
+                                    </td>
+                                    <td th:text="${i.star}"></td>
+                                    <td th:text="${i.dsat}"></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Search Wrapper Area End -->
+</div>
+<!-- ##### Main Content Wrapper End ##### -->
 
-    <!-- ##### Main Content Wrapper Start ##### -->
-    <div class="main-content-wrapper clearfix">
-        <div class="cart-table-area section-padding-10">
-            <div>
-                <div class="row">
-                    <div class="col-12 col-lg-12">
-                        <div class="cart-title mt-50">
-                            <h2>Review List</h2>
-                        </div>
+<!-- ##### Newsletter Area Start ##### -->
 
-                        <div class="cart-table clearfix">
-                            <table class="table table-responsive">
-                                <thead>
-                                    <tr>
-                                        <th>작성자</th>
-                                        <th>리뷰 내용</th>
-                                        <th>제품 만족도</th>
-                                        <th>배송 만족도</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr th:each="i:${list}">
-                                        <td class="cart_product_desc">
-                                            <h5 th:text="${i.custid}">White Modern Chair</h5>
-                                        </td>
-                                        <td class="price">
-                                            <span th:text="${i.review_text}">$130</span>
-                                        </td>
-                                        <td th:text="${i.star}"></td>
-                                        <td th:text="${i.dsat}"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Main Content Wrapper End ##### -->
+<!-- ##### Footer Area End ##### -->
 
-    <!-- ##### Newsletter Area Start ##### -->
-    
-    <!-- ##### Footer Area End ##### -->
-
-    <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Plugins js -->
-    <script src="js/plugins.js"></script>
-    <!-- Active js -->
-    <script src="js/active.js"></script>
+<!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<!-- Popper js -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Plugins js -->
+<script src="js/plugins.js"></script>
+<!-- Active js -->
+<script src="js/active.js"></script>
