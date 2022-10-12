@@ -13,18 +13,18 @@ import com.semi.service.CustService;
 @Controller
 public class RegisterController {
 	@Autowired
-	CustService cust_service;
+	CustService service;
 	
 	@RequestMapping("/register")
 	public String register(Model model) {
 		model.addAttribute("center", "register");
-		return "main";
+		return "index";
 	}
 	
 	@RequestMapping("/registerimpl")
 	public String registerimpl(Model model, CustDTO cust, HttpSession session) {
 		try {
-			cust_service.register(cust);
+			service.register(cust);
 			session.setAttribute("logincust", cust);
 			model.addAttribute("center", "registerok");
 			model.addAttribute("rid", cust);
@@ -33,6 +33,6 @@ public class RegisterController {
 			model.addAttribute("fid", "");
 		}
 		
-		return "main";
+		return "index";
 	}
 }
