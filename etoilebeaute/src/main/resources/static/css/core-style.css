@@ -325,12 +325,12 @@ img {
       bottom: 30px;
       right: 30px; } }
 
-/* Essence Button */ /* 로그인,레지스터 버튼 */
+/* Essence Button */ /* 로그인 버튼 */
 .amado-btn {
   display: inline-block;
   min-width: 160px;
   height: 55px;
-  color:none;
+  color:black;
   border: none;
   border-radius: 0;
   padding: 0 7px;
@@ -338,10 +338,14 @@ img {
   line-height: 56px;
   background-color: white;
   font-weight: 400; }
-  .amado-btn.active, .amado-btn:hover, .amado-btn:focus {
-    font-size: 18px;
-    color: #ffffff;
-    background-color: #131212; }
+  
+  
+  
+  /* 레지스터 버튼 디자인 요소 */
+  .amado-btn.active .amado-btn:hover .amado-btn:focus{
+    font-size: 40px;
+    color:black;
+    background-color:white; }
 
 /* :: 4.0 Search Wrapper Area CSS */
 .search-wrapper {
