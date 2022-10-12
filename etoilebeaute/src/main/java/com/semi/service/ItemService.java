@@ -37,6 +37,10 @@ public class ItemService implements MyService<Integer, ItemDTO>{
 	public List<ItemDTO> getall() throws Exception {
 		return mapper.selectall();
 	}
+	
+	public List<ItemDTO> itemall(int cateid) throws Exception{
+		return mapper.itemall(cateid);
+	}
 
 }
 
