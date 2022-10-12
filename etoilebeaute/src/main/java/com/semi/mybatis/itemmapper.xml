@@ -19,5 +19,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<delete id="delete" parameterType="Integer">
 		DELETE FROM item WHERE id=#{id}
 	</delete>
+	<select id="itemall" parameterType="Integer" resultType="itemDTO">
+		SELECT name, price, img, itemdate, stock FROM item
+		WHERE cateid = #{cateid}
+	</select>
+	
 	
 </mapper>

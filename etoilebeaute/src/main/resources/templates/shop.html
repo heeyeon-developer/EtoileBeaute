@@ -1,4 +1,4 @@
-
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
     <!-- Search Wrapper Area Start -->
     <div class="search-wrapper section-padding-100">
         <div class="search-close">
@@ -47,18 +47,28 @@
                     <ul>
                         <li class="active"><a href="#">Perfumes</a>
                         	<ul>
-                        		<li><a href="/product-details">BYREDO</a></li>
-                        		<li><a href="/product-details">Jo-malon</a></li>
-                        	</ul>
-                        
-                        
+                        		<li><a href="/shop">Aesop</a></li>
+                        		<li><a href="/product-details">Jo malone</a></li>
+                        		<li><a href="/product-details">Maison Margiela</a></li>
+                        		<li><a href="/product-details">SantaMaria Novella</a></li>
+                        		<li><a href="/product-details">Goutal Paris</a></li>
+                        	</ul>           
                         </li>
-                        <li><a href="#">Beds</a></li>
-                        <li><a href="#">Accesories</a></li>
-                        <li><a href="#">Furniture</a></li>
-                        <li><a href="#">Home Deco</a></li>
-                        <li><a href="#">Dressings</a></li>
-                        <li><a href="#">Tables</a></li>
+                        <li class="active"><a href="#">Body & Hand</a>
+	                        <ul>
+	                        		<li><a href="/product-details">Aesop</a></li>
+	                        		<li><a href="/product-details">Jo malone</a></li>
+	                        		<li><a href="/product-details">Maison Margiela</a></li>
+	                        		<li><a href="/product-details">SantaMaria Novella</a></li>
+	                        </ul>
+                        </li>
+                        <li class="active"><a href="#">Candle & Diffuser</a>
+	                        <ul>
+	                        		<li><a href="/product-details">Aesop</a></li>
+	                        		<li><a href="/product-details">Jo malone</a></li>
+	                        		<li><a href="/product-details">Maison Margiela</a></li>
+	                        </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -179,13 +189,13 @@
                 <div class="row">
 
                     <!-- Single Product Area -->
-                    <div class="col-12 col-sm-6 col-md-12 col-xl-6">
+                    <div th:each="it:${itemlist}" class="col-12 col-sm-6 col-md-12 col-xl-6">
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
                             <div class="product-img">
-                                <img src="img/product-img/product1.jpg" alt="">
+                                <img th:src="'img/aesop/'+${it.img}" alt="">
                                 <!-- Hover Thumb -->
-                                <img class="hover-img" src="img/product-img/product2.jpg" alt="">
+                                <img class="hover-img" th:src="'img/aesop/'+${it.img}" alt="">
                             </div>
 
                             <!-- Product Description -->
@@ -193,9 +203,10 @@
                                 <!-- Product Meta Data -->
                                 <div class="product-meta-data">
                                     <div class="line"></div>
-                                    <p class="product-price">$180</p>
-                                    <a href="product-details.html">
-                                        <h6>Modern Chair</h6>
+                                    <p th:text="${it.price}" class="product-price">$</p>
+                                    <a th:href="@{/shop(id=${it.id})}">$</a>
+                                    <a th:text="${it.name}" href="product-details.html">
+                                        <h6>r</h6>
                                     </a>
                                 </div>
                                 <!-- Ratings & Cart -->
@@ -430,3 +441,5 @@
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+
+</html>
