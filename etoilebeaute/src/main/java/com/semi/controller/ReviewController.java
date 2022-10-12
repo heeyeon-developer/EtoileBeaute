@@ -8,7 +8,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.semi.dto.ItemDTO;
 import com.semi.dto.ReviewDTO;
+import com.semi.service.ItemService;
 import com.semi.service.ReviewService;
 
 @Controller
@@ -19,7 +21,6 @@ public class ReviewController {
 	
 	@RequestMapping("/review")
 	public String review(Model model) {
-		
 		List<ReviewDTO> list = null;
 		
 		try {
@@ -33,4 +34,12 @@ public class ReviewController {
 		
 		return "index";
 	}
+	
+	@RequestMapping("/writereview")
+	public String writereview(Model model) {
+		
+		model.addAttribute("center","writereview");
+		return "index";
+	}
+	
 }
