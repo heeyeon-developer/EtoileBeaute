@@ -1,5 +1,7 @@
 package com.semi.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,19 +9,30 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 import com.semi.dto.CustDTO;
+import com.semi.dto.ItemDTO;
 import com.semi.service.CustService;
+import com.semi.service.ItemService;
 
 @Controller
 public class MainController {
 
 	@Autowired
 	CustService service;
+	
+	@Autowired
+	ItemService item_service;
 
 	@RequestMapping("/shop")
 	public String shop(Model model) {
-		model.addAttribute("center", "shop");
+		List<ItemDTO> list = null;
+		try {
+			list = item_service.getall();
+			model.addAttribute("shoplist", list);
+			model.addAttribute("center", "shop");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return "index";
 	}
 

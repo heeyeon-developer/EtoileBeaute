@@ -19,6 +19,7 @@ public class ItemController {
 	// perfumes
 	@RequestMapping("/per_aesop")
 	public String main(Model model, Integer cateid) {
+		
 		List<ItemDTO> list = null;
 		try {
 			list = service.itemall(101);
@@ -28,6 +29,7 @@ public class ItemController {
 			e.printStackTrace();
 		}
 		return "index";
+		
 	}
 
 	@RequestMapping("/per_jomalone")
@@ -173,6 +175,21 @@ public class ItemController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return "index";
+	}
+	
+	
+	@RequestMapping("/product_details")
+	public String product_details(Model model, int itemid) {
+		ItemDTO item = null;
+		try {
+			item = service.get(itemid);
+			model.addAttribute("item_detail", item);
+			model.addAttribute("center", "product_details");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
 		return "index";
 	}
 	

@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 <mapper namespace="com.semi.mapper.ItemMapper">
 	
 	<select id="select" parameterType="Integer" resultType="itemDTO">
-		SELECT * FROM item WHERE id=#{id}
+		SELECT * FROM item WHERE itemid=#{itemid}
 	</select>
 	<select id="selectall" resultType="itemDTO">
 		SELECT * FROM item
