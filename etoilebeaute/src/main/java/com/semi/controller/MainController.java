@@ -35,6 +35,7 @@ public class MainController {
 		return "index";
 	}
 
+	
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
 		if (session != null) {
