@@ -66,6 +66,26 @@ ol {
   ul li,
   ol li {
     list-style: none; }
+    
+    /*내가만든 메뉴 hover 글자 조정  */
+ul li ul li{
+	display:none;
+	font-size:20px;
+	text-align:center;
+	font-weight: 200;
+  	font-size: 13px;
+	text-decoration: none;
+}
+   
+    /*내가만든 메뉴 hover  */
+ ul li:hover ul li{
+	display:block;
+ }   
+   
+ ul li a:hover{
+ 	background-color:none;
+ }
+
 
 img {
   height: auto;
@@ -297,6 +317,7 @@ img {
   width: 40px;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms; }
+  /*페이지 상위로 만드는 버튼  */
   #scrollUp:hover {
     background-color: #131212; }
   @media only screen and (max-width: 767px) {
@@ -304,18 +325,18 @@ img {
       bottom: 30px;
       right: 30px; } }
 
-/* Essence Button */
+/* Essence Button */ /* 로그인,레지스터 버튼 */
 .amado-btn {
   display: inline-block;
   min-width: 160px;
   height: 55px;
-  color: #ffffff;
+  color:none;
   border: none;
   border-radius: 0;
   padding: 0 7px;
   font-size: 18px;
   line-height: 56px;
-  background-color: #fbb710;
+  background-color: white;
   font-weight: 400; }
   .amado-btn.active, .amado-btn:hover, .amado-btn:focus {
     font-size: 18px;
@@ -448,7 +469,9 @@ img {
         background-color: #131212; }
     .main-content-wrapper .header-area .logo {
       margin-bottom: 100px;
-      display: block; }
+      display: block;
+      background-color:black; }
+    /* 메뉴 네비게이션 바 */
     .main-content-wrapper .header-area .amado-nav li a {
       font-size: 14px;
       text-transform: uppercase;
@@ -458,7 +481,11 @@ img {
       display: block;
       line-height: 0.9;
       color: #131212;
-      font-weight: normal; }
+      font-weight: normal; 
+      
+      }
+      
+      /* 메뉴 옆 표시바  */
       .main-content-wrapper .header-area .amado-nav li a::after {
         -webkit-transition-duration: 500ms;
         transition-duration: 500ms;
@@ -470,7 +497,8 @@ img {
         left: -150px;
         background-color: #fbb710;
         z-index: 10;
-        content: ''; }
+        content: ''; 
+       	}
       .main-content-wrapper .header-area .amado-nav li a:hover, .main-content-wrapper .header-area .amado-nav li a:focus {
         color: #fbb710; }
     .main-content-wrapper .header-area .amado-nav li:hover a::after, .main-content-wrapper .header-area .amado-nav li:focus a::after {
@@ -1015,7 +1043,7 @@ img {
     color: #fff; }
 
 /* :: 6.0 Newsletter Area CSS */
-.newsletter-area {
+.newsletter-area butt{
   position: relative;
   z-index: 1;
   background-color: #3c3c3c; }
@@ -1200,17 +1228,20 @@ img {
     font-size: 16px;
     text-transform: capitalize;
     color: #242424; }
+    /* shop 카테고리 메뉴 css */
   .widget .catagories-menu li a {
     text-transform: capitalize;
     font-size: 16px;
     padding: 15px 0 15px 20px;
     display: block;
     font-weight: 400;
-    color: #959595; }
+    color: black; }
+    /* shop 카테고리 메뉴 hover 색상 */
     .widget .catagories-menu li a:hover, .widget .catagories-menu li a:focus {
       color: #fbb710; }
+      /* 메뉴 글자 색깔변경 */
   .widget .catagories-menu li.active a {
-    color: #fbb710; }
+    color: balck; }
   .widget.price .slider-range-price {
     background-color: #c7d2d8 !important;
     height: 2px;
