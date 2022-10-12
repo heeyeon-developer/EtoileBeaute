@@ -8,38 +8,32 @@ import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.semi.dto.CartDTO;
 import com.semi.dto.ItemDTO;
 import com.semi.dto.ReviewDTO;
+import com.semi.service.CartService;
 import com.semi.service.ItemService;
 import com.semi.service.ReviewService;
 
 @Controller
-public class ReviewController {
+public class CartController {
 
 	@Autowired
-	ReviewService service;
+	CartService service;
 	
-	@RequestMapping("/review")
-	public String review(Model model, Integer itemid) {
-		List<ReviewDTO> list = null;
+	@RequestMapping("/cart")
+	public String cart(Model model, String custid) {
+		List<CartDTO> list = null;
 		
 		try {
-			list = service.get_itemreview(itemid);
+			list = service.get_cartitem(custid);
 			model.addAttribute("list",list);
-			model.addAttribute("center","review");
+			model.addAttribute("center","cart");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		return "index";
-	}
-	
-	@RequestMapping("/writereview")
-	public String writereview(Model model) {
-		
-		model.addAttribute("center","writereview");
-		return "index";
-	}
-	
+	}	
 }

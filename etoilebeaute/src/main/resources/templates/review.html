@@ -103,7 +103,9 @@ $(document).ready(function(){
                             </tbody>
                         </table>
                     </div>
-                    <button id="reviewbtn" type="button" class="btn btn-default">리뷰 작성하기</button>
+                    <div th:if="${session.logincust != null}">
+                    	<button id="reviewbtn" type="button" class="btn btn-default">리뷰 작성하기</button>
+                    </div>
                 </div>
             </div>
         </div>

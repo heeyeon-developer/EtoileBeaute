@@ -36,12 +36,6 @@ public class MainController {
 		return "index";
 	}
 
-	@RequestMapping("/cart")
-	public String cart(Model model) {
-		model.addAttribute("center", "cart");
-		return "index";
-	}
-
 	@RequestMapping("/login")
 	public String login(Model model) {
 		model.addAttribute("center", "login");
@@ -67,7 +61,6 @@ public class MainController {
 				if(cust.getPwd().equals(pwd)) {	
 				session.setAttribute("logincust", cust);
 				model.addAttribute("center", "maincenter");
-				System.out.println("in");
 				}
 			}
 		} catch (Exception e) {

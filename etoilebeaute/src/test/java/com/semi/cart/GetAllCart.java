@@ -1,4 +1,4 @@
-package com.semi.review;
+package com.semi.cart;
 
 import java.util.List;
 
@@ -6,27 +6,27 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.semi.dto.CartDTO;
 import com.semi.dto.ReviewDTO;
+import com.semi.service.CartService;
 import com.semi.service.ReviewService;
 
 @SpringBootTest
-class GetAllReview {
+class GetAllCart {
 
 	@Autowired
-	ReviewService service;
+	CartService service;
 	
 	@Test
 	void contextLoads() {
-		List<ReviewDTO> list = null;
+		List<CartDTO> list = null;
 		try {
-			list = service.getall();
+			list = service.get_cartitem("Minsikkk");
+			for(CartDTO c : list)
+				System.out.println(c);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
-		for(ReviewDTO c:list) {
-			System.out.println(c);
 		}
 		
 	}

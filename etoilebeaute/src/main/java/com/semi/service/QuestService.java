@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.semi.dto.QuestDTO;
+import com.semi.dto.ReviewDTO;
 import com.semi.frame.MyService;
 import com.semi.mapper.QuestMapper;
 
@@ -42,6 +43,10 @@ public class QuestService implements MyService<Integer,QuestDTO> {
 	@Override
 	public List<QuestDTO> getall() throws Exception {
 		return mapper.selectall();
+	}
+	
+	public List<QuestDTO> get_itemquest(Integer itemid) throws Exception{
+		return mapper.select_itemquest(itemid);
 	}
 
 }

@@ -10,7 +10,7 @@ import com.semi.dto.ReviewDTO;
 import com.semi.service.ReviewService;
 
 @SpringBootTest
-class GetAllReview {
+class GetItemReview {
 
 	@Autowired
 	ReviewService service;
@@ -19,7 +19,9 @@ class GetAllReview {
 	void contextLoads() {
 		List<ReviewDTO> list = null;
 		try {
-			list = service.getall();
+			list = service.get_itemreview(15);
+			for(ReviewDTO i : list)
+				System.out.println(i);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

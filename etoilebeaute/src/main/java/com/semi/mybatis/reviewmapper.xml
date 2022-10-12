@@ -19,5 +19,8 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<delete id="delete" parameterType="Integer">
 		DELETE FROM review WHERE reviewid=#{reviewid}
 	</delete>
+	<select id="select_itemreview" parameterType="Integer" resultType="reviewDTO">
+		SELECT * FROM review WHERE itemid=#{itemid}
+	</select>
 	
 </mapper>

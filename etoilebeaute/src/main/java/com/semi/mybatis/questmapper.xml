@@ -19,5 +19,8 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<delete id="delete" parameterType="Integer">
 		DELETE FROM quest WHERE questid=#{questid}
 	</delete>
+	<select id="select_itemquest" parameterType="Integer" resultType="questDTO">
+		SELECT * FROM quest WHERE itemid=#{itemid}
+	</select>
 	
 </mapper>
