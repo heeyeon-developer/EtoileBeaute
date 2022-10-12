@@ -30,6 +30,16 @@
 
 </style>
 
+<script>
+
+$(document).ready(function(){
+	$('#reviewbtn').click(function(){
+		location.href="/writereview";
+	});
+	
+});
+</script>
+
 <!-- Search Wrapper Area Start -->
 <div class="search-wrapper section-padding-100">
     <div class="search-close">
@@ -51,8 +61,8 @@
 <!-- Search Wrapper Area End -->
 
 <!-- ##### Main Content Wrapper Start ##### -->
-<div class="main-content-wrapper clearfix">
-    <div class="cart-table-area section-padding-10">
+<div class="main-content-wrapper">
+    <div class="cart-table-area">
         <div>
             <div class="row">
                 <div class="col-12 col-lg-12">
@@ -93,6 +103,7 @@
                             </tbody>
                         </table>
                     </div>
+                    <button id="reviewbtn" type="button" class="btn btn-default">리뷰 작성하기</button>
                 </div>
             </div>
         </div>
