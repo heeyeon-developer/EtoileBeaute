@@ -65,7 +65,7 @@ a {
 
 
 
-/*»ç¿ëÀÚ Á¤º¸Ä­  */
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä­  */
 #user_info{
 	
 	text-align:left;
@@ -83,7 +83,7 @@ ol {
   ol li {
     list-style: none; }
     
-    /*³»°¡¸¸µç ¸Þ´º hover ±ÛÀÚ Á¶Á¤  */
+    /*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ hover ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½  */
 ul li ul li{
 	display:none;
 	font-size:20px;
@@ -93,7 +93,7 @@ ul li ul li{
 	text-decoration: none;
 }
    
-    /*³»°¡¸¸µç ¸Þ´º hover  */
+    /*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ hover  */
  ul li:hover ul li{
 	display:block;
  }   
@@ -341,7 +341,7 @@ img {
   width: 40px;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms; }
-  /*ÆäÀÌÁö »óÀ§·Î ¸¸µå´Â ¹öÆ°  */
+  /*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°  */
   #scrollUp:hover {
     background-color: #131212; }
   @media only screen and (max-width: 767px) {
@@ -349,7 +349,7 @@ img {
       bottom: 30px;
       right: 30px; } }
 
-/* Essence Button */ /* ·Î±×ÀÎ ¹öÆ° */
+/* Essence Button */ /* ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° */
 .amado-btn {
   display: inline-block;
   min-width: 160px;
@@ -365,7 +365,7 @@ img {
   
   
   
-  /* ·¹Áö½ºÅÍ ¹öÆ° µðÀÚÀÎ ¿ä¼Ò */
+  /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ */
   .amado-btn.active .amado-btn:hover{
     font-size: 40px;
     color:black;
@@ -499,7 +499,7 @@ img {
       margin-bottom: 100px;
       display: block;
       background-color:black; }
-    /* ¸Þ´º ³×ºñ°ÔÀÌ¼Ç ¹Ù */
+    /* ï¿½Þ´ï¿½ ï¿½×ºï¿½ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ */
     .main-content-wrapper .header-area .amado-nav li a {
       font-size: 14px;
       text-transform: uppercase;
@@ -513,7 +513,7 @@ img {
       
       }
       
-      /* ¸Þ´º ¿· Ç¥½Ã¹Ù  */
+      /* ï¿½Þ´ï¿½ ï¿½ï¿½ Ç¥ï¿½Ã¹ï¿½  */
       .main-content-wrapper .header-area .amado-nav li a::after {
         -webkit-transition-duration: 500ms;
         transition-duration: 500ms;
@@ -652,27 +652,27 @@ img {
     position: relative;
     z-index: 1;
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 calc(95% - 320px);
-    flex: 0 0 calc(95% - 320px);
-    width: calc(95% - 320px);
-    max-width: calc(95% - 320px);
+    -ms-flex: 0 0 calc(95%);
+    flex: 0 0 calc(95%);
+    width: calc(95%);
+    max-width: calc(95%);
     margin:30px;
     
      }
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .main-content-wrapper .cart-table-area {
         -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(100% - 320px);
-        flex: 0 0 calc(100% - 320px);
-        width: calc(100% - 320px);
-        max-width: calc(100% - 320px); } }
+        -ms-flex: 0 0 calc(100%);
+        flex: 0 0 calc(100%);
+        width: calc(100%);
+        max-width: calc(100%); } }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
       .main-content-wrapper .cart-table-area {
         -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(100% - 280px);
-        flex: 0 0 calc(100% - 280px);
-        width: calc(100% - 280px);
-        max-width: calc(100% - 280px); } }
+        -ms-flex: 0 0 calc(100%);
+        flex: 0 0 calc(100%);
+        width: calc(100%);
+        max-width: calc(100%); } }
     @media only screen and (max-width: 767px) {
       .main-content-wrapper .cart-table-area {
         -webkit-box-flex: 0;
@@ -722,10 +722,10 @@ img {
         .main-content-wrapper .cart-table-area table tbody tr td {
           border: none;
           -webkit-box-flex: 0;
-          -ms-flex: 0 0 25%;
-          flex: 0 0 25%;
-          width: 25%;
-          max-width: 25%; }
+          -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+          width: 20%;
+          max-width: 20%; }
           .main-content-wrapper .cart-table-area table tbody tr td h5 {
             font-size: 16px;
             color: #252525; }
@@ -1256,7 +1256,7 @@ img {
     font-size: 16px;
     text-transform: capitalize;
     color: #242424; }
-    /* shop Ä«Å×°í¸® ¸Þ´º css */
+    /* shop Ä«ï¿½×°ï¿½ ï¿½Þ´ï¿½ css */
   .widget .catagories-menu li a {
     text-transform: capitalize;
     font-size: 16px;
@@ -1264,10 +1264,10 @@ img {
     display: block;
     font-weight: 400;
     color: black; }
-    /* shop Ä«Å×°í¸® ¸Þ´º hover »ö»ó */
+    /* shop Ä«ï¿½×°ï¿½ ï¿½Þ´ï¿½ hover ï¿½ï¿½ï¿½ï¿½ */
     .widget .catagories-menu li a:hover, .widget .catagories-menu li a:focus {
       color: #fbb710; }
-      /* ¸Þ´º ±ÛÀÚ »ö±òº¯°æ */
+      /* ï¿½Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½òº¯°ï¿½ */
   .widget .catagories-menu li.active a {
     color: balck; }
   .widget.price .slider-range-price {
