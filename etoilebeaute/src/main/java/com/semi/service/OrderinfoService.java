@@ -14,10 +14,11 @@ public class OrderinfoService implements MyService<Integer, OrderinfoDTO>{
 	
 	@Autowired
 	OrderinfoMapper mapper;
-	
+
 	@Override
 	public void register(OrderinfoDTO v) throws Exception {
 		mapper.insert(v);
+		
 	}
 
 	@Override
@@ -31,18 +32,16 @@ public class OrderinfoService implements MyService<Integer, OrderinfoDTO>{
 	}
 
 	@Override
-	public OrderinfoDTO get(Integer k) throws Exception {
+	public OrderinfoDTO get(Integer k) throws Exception {b
 		return mapper.select(k);
 	}
 
 	@Override
-	public List<OrderinfoDTO> getall() throws Exception {
-		return mapper.selectall();
+	public List<OrderinfoDTO> get() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
-	public List<OrderinfoDTO> orderdetail(int orderinfoid) throws Exception {
-		return mapper.orderdetail(orderinfoid);
-	}
 	
 
 }

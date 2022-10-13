@@ -2,6 +2,7 @@ package com.semi.dto;
 
 import java.util.Date;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,7 +23,7 @@ public class CustDTO {
 	private Date rdate;
 	private String email;
 	private String phone;
-	private Date birth;
+	private String birth;
 	
 	
 }

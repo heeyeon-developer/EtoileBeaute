@@ -24,13 +24,14 @@ public class RegisterController {
 	@RequestMapping("/registerimpl")
 	public String registerimpl(Model model, CustDTO cust, HttpSession session) {
 		try {
+			System.out.println(cust);
 			service.register(cust);
 			session.setAttribute("logincust", cust);
 			model.addAttribute("center", "registerok");
 			model.addAttribute("rid", cust);
 		} catch (Exception e) {
 			model.addAttribute("center", "registerfail");
-			model.addAttribute("fid", "");
+			model.addAttribute("fid", cust);
 		}
 		
 		return "index";

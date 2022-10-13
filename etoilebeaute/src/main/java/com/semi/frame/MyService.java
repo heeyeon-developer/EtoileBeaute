@@ -7,5 +7,5 @@ public interface MyService<K,V> {
 	public void remove(K k) throws Exception;
 	public void modify(V v) throws Exception;
 	public V get(K k) throws Exception;
-	public List<V> getall() throws Exception;
+	public List<V> get() throws Exception;
 }
