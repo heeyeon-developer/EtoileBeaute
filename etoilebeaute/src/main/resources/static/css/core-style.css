@@ -8,6 +8,7 @@
 @import url(../css/nice-select.css);
 @import url(../css/font-awesome.min.css);
 @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500&family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital@0;1&display=swap');
 @font-face {
   font-family: 'helveticaneuebold';
   src: url("../fonts/helvetica_neu_bold-webfont.woff2") format("woff2"), url("../fonts/helvetica_neu_bold-webfont.woff") format("woff");
@@ -60,6 +61,20 @@ a {
     color: #131212;
     font-weight: 400;
     font-size: 12px; }
+
+
+
+
+/*사용자 정보칸  */
+#user_info{
+	
+	text-align:left;
+	font-weight:700;
+	font-size:14px;
+	font-family: 'Bebas Neue', cursive;
+	font-family: 'Poppins', sans-serif;
+	font-style:italic;
+}
 
 ul,
 ol {
