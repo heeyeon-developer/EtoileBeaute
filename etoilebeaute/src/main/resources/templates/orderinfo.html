@@ -1,0 +1,94 @@
+<meta charset="utf-8">
+
+<style>
+#order_tb{
+	text-align: center;
+}
+
+
+</style>
+
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+
+<!-- Search Wrapper Area Start -->
+<div class="search-wrapper section-padding-100">
+    <div class="search-close">
+        <i class="fa fa-close" aria-hidden="true"></i>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="search-content">
+                    <form action="#" method="get">
+                        <input type="search" name="search" id="search" placeholder="Type your keyword...">
+                        <button type="submit"><img src="img/core-img/search.png" alt=""></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Search Wrapper Area End -->
+
+<!-- ##### Main Content Wrapper Start ##### -->
+<div class="main-content-wrapper">
+    <div class="cart-table-area">
+        <div>
+            <div class="row">
+                <div class="col-12 col-lg-12">
+                    <div class="cart-title mt-50">
+                        <h2>Order List</h2>
+                    </div>
+
+                    <div class="cart-table clearfix">
+                        <table class="table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th>IMG</th>
+                                    <th>주문상세번호</th>
+                                    <th>상품명</th>
+                                    <th>가격</th>
+                                    <th>수량</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="li:${list}" id="order_tb">
+                                	<td class="orderimg">
+                                        <img th:src="'img/all/'+${li.img}"></span>
+                                    </td>
+                                    <td class="orderid">
+                                        <span th:th:text="${li.orderinfoid}"></span>
+                                    </td>
+                                    <td class="itemname">
+                                        <span th:text="${li.name}"></span>
+                                    </td>
+                                    <td class="price">
+                                        <span th:text="${li.price}"></span>
+                                    </td>
+                                    <td class="cnt">
+                                        <span th:text="${li.cnt}"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                    
+                </div>
+                <div class="col-12 col-lg-4" style="display: inline-block; margin: 0 5px;  float: right;">
+                    <div th:each="li:${list}" class="cart-summary">
+                        <h5>Order Total</h5>
+                        <ul class="summary-table">
+                            <li><span>subtotal:</span> <span th:text="${li.order_price}" id="sub_total">$140.00</span></li>
+                            <li><span>coupon:</span> <span th:text="${li.coupon_name}+'('+${li.rate}+')'"></span></li>
+                            <li><span>total:</span> <span th:text="${li.total_price}">$140.00</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</html>

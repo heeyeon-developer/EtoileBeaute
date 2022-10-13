@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.semi.mapper.OrderinfoMapper">
+	
+	<select id="select" parameterType="Integer" resultType="OrderinfoDTO">
+		SELECT * FROM orderinfo WHERE orderinfoid=#{orderinfoid}
+	</select>
+	<select id="selectall" resultType="OrderinfoDTO">
+		SELECT * FROM orderinfo
+	</select>
+	<insert id="insert" parameterType="OrderinfoDTO">
+		INSERT INTO orderinfo VALUES (NULL,#{orderid},#{itemid},#{psid},#{cnt},#{price})
+	</insert>
+	<update id="update" parameterType="OrderinfoDTO">
+		UPDATE orderinfo SET orderid=#{orderid},itemid=#{itemid},psid=#{psid},cnt=#{cnt},price=#{price} WHERE orderinfoid=#{orderinfoid}
+	</update>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM orderinfo WHERE orderinfoid=#{orderinfoid}
+	</delete>
+	<select id="orderdetail" parameterType="Integer" resultType="OrderinfoDTO">
+		SELECT om.orderdate, it.img, oi.orderinfoid, oi.orderid, it.name, it.price, oi.cnt, (it.price * oi.cnt) AS order_price,
+		((it.price * oi.cnt) - ((it.price * oi.cnt)*(cp.rate/100))) AS total_price, cp.coupon_name FROM orderinfo oi
+		INNER JOIN item it ON oi.itemid = it.itemid
+		INNER JOIN ordermaster om ON oi.orderid = om.orderid
+		INNER JOIN coupon cp ON om.couponid = cp.couponid
+		WHERE orderinfoid = #{orderinfoid};
+	</select>
+	
+	
+</mapper>

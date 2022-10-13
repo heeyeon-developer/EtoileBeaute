@@ -146,7 +146,9 @@ $(document).ready(function(){
                     <li class="active"><a href="/">Home</a></li>
                     <li><a href="/about">About</a>
                     <li><a href="/shop">Shop</a></li>
-                    <li><a href="/ordermaster">Order</a></li>
+                    <div class="amado-btn-group mt-30 mb-100" th:if="${session.logincust != null}">
+                    	<li><a th:href="@{/ordermaster(custid=${session.logincust.custid})}">Order</a></li>
+                    </div>
                     <li><a href="">Ranking</a></li>
                     <li><a href="">Seen</a></li>
                 </ul>

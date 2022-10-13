@@ -1,0 +1,84 @@
+<meta charset="utf-8">
+
+<style>
+ #order_tb{
+	text-align: center;
+}
+
+</style>
+<script>
+$(document).ready(function(){
+	
+});
+
+</script>
+
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+
+<!-- Search Wrapper Area Start -->
+<div class="search-wrapper section-padding-100">
+    <div class="search-close">
+        <i class="fa fa-close" aria-hidden="true"></i>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="search-content">
+                    <form action="#" method="get">
+                        <input type="search" name="search" id="search" placeholder="Type your keyword...">
+                        <button type="submit"><img src="img/core-img/search.png" alt=""></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Search Wrapper Area End -->
+
+<!-- ##### Main Content Wrapper Start ##### -->
+<div class="main-content-wrapper">
+    <div class="cart-table-area">
+        <div>
+            <div class="row">
+                <div class="col-12 col-lg-12">
+                    <div class="cart-title mt-50">
+                        <h2>Order List</h2>
+                    </div>
+
+                    <div class="cart-table clearfix">
+                        <table class="table table-responsive">
+                            <thead>
+                                <tr id="order_th">
+                                    <th>주문날짜</th>
+                                    <th>주문번호</th>
+                                    <th>수량</th>
+                                    <th>총금액</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="li:${list}" id="order_tb">
+                                	<td class="orderdate">
+                                        <span th:text="${#dates.format(li.orderdate, 'yyyy-MM-dd')}"></span>
+                                    </td>
+                                    <td class="orderid">
+                                        <a th:href="@{/orderinfo(orderinfoid=${li.orderid})}" th:text="${li.orderid}"></a>
+                                       
+                                    </td>
+                                    <td class="cnt">
+                                        <span th:text="${li.cnt}"></span>
+                                    </td>
+                                    <td class="price">
+                                        <span th:text="${li.total_price}"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

@@ -1,6 +1,5 @@
 package com.semi.dto;
 
-
 import java.util.Date;
 
 import lombok.AllArgsConstructor;
@@ -14,13 +13,21 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
-public class OrdermasterDTO {
+public class OrderinfoDTO {
+	private int orderinfoid;
 	private int orderid;
-	private int couponid;
-	private String custid;
-	private Date orderdate;
+	private int itemid;
+	private int psid;
 	private int cnt;
+	private int price;
+	
+	private String orderdate;
+	private String img;
+	private String name;
+	private int rate;
+	private String coupon_name;
 	private int total_price;
+	private int order_price;
 	
 
 }
