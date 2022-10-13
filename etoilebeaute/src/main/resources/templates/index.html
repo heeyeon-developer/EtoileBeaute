@@ -32,15 +32,15 @@
 
 function printTime() {
               var clock = document.getElementById("clock");            
-              var now = new Date();                                                  // 현재시간
+              var now = new Date(); // 현재시간
               var nowTime = 
 			now.getFullYear() + "년" + (now.getMonth()+1) + "월" + 
 			now.getDate() + "일" + now.getHours() + "시" + 
 			now.getMinutes() + "분" + now.getSeconds() + "초";
-              clock.innerHTML = nowTime;           // 현재시간을 출력
-              setTimeout("printTime()",1000);         // setTimeout(“실행할함수”,시간) 시간은1초의 경우 1000
+              clock.innerHTML = nowTime; // 현재시간을 출력
+              setTimeout("printTime()",1000);// setTimeout(“실행할함수”,시간) 시간은1초의 경우 1000
 	}
-	window.onload = function() {                         // 페이지가 로딩되면 실행
+	window.onload = function() { // 페이지가 로딩되면 실행
 	              printTime();
 	};
 	
@@ -146,9 +146,11 @@ $(document).ready(function(){
                     <li class="active"><a href="/">Home</a></li>
                     <li><a href="/about">About</a>
                     <li><a href="/shop">Shop</a></li>
-                    <div class="amado-btn-group mt-30 mb-100" th:if="${session.logincust != null}">
+                    
+                    	<ul th:if="${session.logincust != null}">
                     	<li><a th:href="@{/ordermaster(custid=${session.logincust.custid})}">Order</a></li>
-                    </div>
+                    	</ul>
+                    
                     <li><a href="">Ranking</a></li>
                     <li><a href="">Seen</a></li>
                 </ul>
@@ -168,30 +170,28 @@ $(document).ready(function(){
             	 style= "font-size:15px; text-align: center; 
             	 "> </h6><div id="test" th:text="${session.logincust.custid}" style="display:none;"></div>
             	 <div id="coupon" th:text="${session.logincust.custid}" style="display:none;"></div>
-            	<ul id="user_info">
+            	<div id="user_info">
             		<table class="table table-hover">
 					    <thead>
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td>💶COUPON :</td>
-					      </tr>
+					        <td colspan="2"> 💶COUPON :</td>
+					      	<td id="coupon_cnt">	</td>
+					      </tr>  
 					      <tr>
-					      <td id="coupon_cnt">	</td>
-					      </tr>
-					      <tr>
-					        <td>⏰접속시간 :</td>
+					        <td colspan="1">⏰현재시간</td>
 					        <td id="clock"></td>
 					      </tr>
 					      <tr>
 					      
-					        <td>🚀장바구니 :</td>
+					        <td colspan="2">🚀장바구니 :</td>
 					        <td id="cart_cnt"></td>
 					        
 					      </tr>
 					    </tbody>
 					  </table>
-            	</ul>
+            	</div>
             </div>
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
