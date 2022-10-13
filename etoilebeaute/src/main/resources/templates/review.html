@@ -34,7 +34,8 @@
 
 $(document).ready(function(){
 	$('#reviewbtn').click(function(){
-		location.href="/writereview";
+		var itemid=$('#itemid').text();
+		location.href="/writereview?itemid="+itemid;
 	});
 	
 });
@@ -83,7 +84,7 @@ $(document).ready(function(){
                             <tbody>
                                 <tr th:each="i:${list}">
                                     <td class="cart_product_desc">
-                                        <h5 th:text="${i.custid}">White Modern Chair</h5>
+                                        <h5 th:text="${i.custid}">White Modern Chair</h5><div id="itemid" th:text="${i.itemid}" style="display:none"></div>
                                     </td>
                                     <td class="price">
                                         <span th:text="${i.review_text}">$130</span>

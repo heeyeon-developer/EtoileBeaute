@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM review
 	</select>
 	<insert id="insert" parameterType="reviewDTO">
-		INSERT INTO review VALUES (NULL,#{custid},#{review_text},#{star},dsat)
+		INSERT INTO review VALUES (NULL,#{custid},#{itemid},#{review_text},#{star},#{dsat})
 	</insert>
 	<update id="update" parameterType="reviewDTO">
 		UPDATE review SET custid=#{custid}, review_text=#{review_text}, star=#{star}, dsat=#{dsat} WHERE reviewid=#{reviewid}

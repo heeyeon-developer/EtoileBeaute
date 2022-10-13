@@ -1,3 +1,20 @@
+<script>
+
+$(document).ready(function(){
+	$('#savereview_btn').click(function(){
+		var custid = '[[${session.logincust.custid}]]';
+		var itemid = $('#itemid').text();
+		var star = $('#star').val();
+		var dsat = $('#dsat').val();
+		var reviewtext = $('#review_text').val();
+		location.href="/registerreview?custid="+custid+"&itemid="+itemid+"&reviewtext="+reviewtext+"&star="+star+"&dsat="+dsat;
+	});
+	
+	
+});
+
+</script>
+
 <div class="cart-table-area section-padding-100">
     <div class="container-fluid">
         <div class="row">
@@ -8,15 +25,12 @@
                         <h2>소중한 리뷰 감사합니다 :)</h2>
                     </div>
 
-                    <form action="#" method="post">
+                    <form id="review_form" method="post">
                         <div class="row">
-                            <div class="col-md-12 mb-3">
-                                <input type="text" class="form-control" id="revie_title" value="" placeholder="제목을 입력해 주세요." required>
-                            </div>
-                            <div class="col-2 mb-3">제품 만족도</div>
+                            <div class="col-2 mb-3">제품 만족도</div><div id="itemid" th:text="${itemid}" style="display:none"></div>
                             <div class="col-4 mb-3">
-                                <select class="w-100" id="country">
-                                <option value="usa"></option>
+                                <select id="star" class="w-100">
+                                <option value=""></option>
                                 <option value="100">★★★★★</option>
                                 <option value="80">★★★★</option>
                                 <option value="60">★★★</option>
@@ -26,17 +40,16 @@
                             </div>
                             <div class="col-2 mb-3">배송 만족도</div>
                             <div class="col-4 mb-3">
-                                <select class="w-100" id="country">
+                                <select id="dsat" class="w-100">
                                 <option value="usa"></option>
-                                <option value="100">★★★★★</option>
-                                <option value="80">★★★★</option>
-                                <option value="60">★★★</option>
-                                <option value="40">★★</option>
-                                <option value="20">★</option>
+                                <option value="예정 일자에 맞게 왔어요.">예정 일자에 맞게 왔어요.</option>
+                                <option value="예정 일자보다 빠르게 왔어요.">예정 일자보다 빠르게 왔어요.</option>
+                                <option value="만족 합니다.">만족 합니다.</option>
+                                <option value="너무 느리게 왔어요">너무 느리게 왔어요.</option>
                             </select>
                             </div>
                             <div class="col-12 mb-3">
-                                <textarea name="comment" class="form-control w-100" id="comment" cols="30" rows="10"></textarea>
+                                <textarea id="review_text" name="comment" class="form-control w-100" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                     </form>

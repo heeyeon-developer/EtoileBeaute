@@ -36,10 +36,24 @@ public class ReviewController {
 	}
 	
 	@RequestMapping("/writereview")
-	public String writereview(Model model) {
-		
+	public String writereview(Model model, String itemid) {
+		model.addAttribute("itemid",itemid);
 		model.addAttribute("center","writereview");
 		return "index";
+	}
+	
+	@RequestMapping("/registerreview")
+	public String registerreview(Model model, String custid, int itemid, String reviewtext, int star, String dsat) {
+		ReviewDTO review = new ReviewDTO(0,custid,itemid,reviewtext,star,dsat);
+		System.out.println(review);
+		try {
+			service.register(review);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return "redirect:review?itemid="+itemid;
 	}
 	
 }

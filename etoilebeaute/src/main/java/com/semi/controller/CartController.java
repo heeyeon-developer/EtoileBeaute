@@ -47,4 +47,16 @@ public class CartController {
 		
 		return result;
 	}	
+	
+	@RequestMapping("/deletecart")
+	public String deletecart(Model model, int cart_id, String cust_id) {
+		try {
+			service.remove(cart_id);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return "redirect:cart?custid="+cust_id;
+	}
 }
