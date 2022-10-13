@@ -23,4 +23,13 @@ public class AjaxController {
 		return cnt+"";
 	}
 	
+	@RequestMapping("/couponcnt")
+	public String couponcnt(String custid) {
+		int cnt = mapper.getCouponCnt(custid);
+		return cnt+"";
+	}
+	
+	
+
+
 }

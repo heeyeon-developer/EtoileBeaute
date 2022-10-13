@@ -30,6 +30,24 @@
 
 <script>
 
+function printTime() {
+              var clock = document.getElementById("clock");            
+              var now = new Date();                                                  // 현재시간
+              var nowTime = 
+			now.getFullYear() + "년" + (now.getMonth()+1) + "월" + 
+			now.getDate() + "일" + now.getHours() + "시" + 
+			now.getMinutes() + "분" + now.getSeconds() + "초";
+              clock.innerHTML = nowTime;           // 현재시간을 출력
+              setTimeout("printTime()",1000);         // setTimeout(“실행할함수”,시간) 시간은1초의 경우 1000
+	}
+	window.onload = function() {                         // 페이지가 로딩되면 실행
+	              printTime();
+	};
+	
+
+
+
+
  function getCartCnt(test){
 	$.ajax({
 		url:'/cartcnt?custid='+test,
@@ -40,17 +58,27 @@
 };
  
 
+function getCouponCnt(coupon){
+	$.ajax({
+		url:'/couponcnt?custid='+coupon,
+		success:function(data){
+			$('#coupon_cnt').text(data);
+		}
+	});
+};
+
 
 $(document).ready(function(){
 	var test= $('#test').text();
-	
+	var coupon = $('#coupon').text();
 		if(test != null){
 		 
 			getCartCnt(test);
+			getCouponCnt(coupon);
 			
-		}
+		} 
 	
-	
+		
 	
 });
 
@@ -136,23 +164,26 @@ $(document).ready(function(){
             	<p style="text-align:center;">😀😀😀</p>
             	<h6  th:text="${session.logincust.name}+ '님 환영합니다'"
             	 style= "font-size:15px; text-align: center; 
-            	 "> </h6><div id="test" th:text="${session.logincust.custid}"></div>
+            	 "> </h6><div id="test" th:text="${session.logincust.custid}" style="display:none;"></div>
+            	 <div id="coupon" th:text="${session.logincust.custid}" style="display:none;"></div>
             	<ul id="user_info">
             		<table class="table table-hover">
 					    <thead>
 					    </thead>
-					    <tbody style="border:1px solid white;">
+					    <tbody>
 					      <tr>
-					        <td>💶COUPON:</td>
-					        <td id="coupon_cnt"></td>
+					        <td>💶COUPON :</td>
 					      </tr>
 					      <tr>
-					        <td>⏰접속시간:</td>
-					        <td></td>
+					      <td id="coupon_cnt">	</td>
+					      </tr>
+					      <tr>
+					        <td>⏰접속시간 :</td>
+					        <td id="clock"></td>
 					      </tr>
 					      <tr>
 					      
-					        <td>🚀장바구니:</td>
+					        <td>🚀장바구니 :</td>
 					        <td id="cart_cnt"></td>
 					        
 					      </tr>

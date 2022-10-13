@@ -10,5 +10,11 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		WHERE custid=#{custid}
 	</select>
 	
+	<!--  회원별 쿠폰 갯수 조회 -->
+	<select id="getCouponCnt" resultType="Integer" parameterType="String">
+		SELECT  sum(cnt) as total_cnt FROM coupon
+		GROUP BY custid
+		HAVING custid=#{custid}
+	</select>
 	
 </mapper>

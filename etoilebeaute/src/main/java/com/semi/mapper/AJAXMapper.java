@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Mapper
 public interface AJAXMapper  {
 	public int getCartCnt(String custid);
+	public int getCouponCnt(String custid);
 }
