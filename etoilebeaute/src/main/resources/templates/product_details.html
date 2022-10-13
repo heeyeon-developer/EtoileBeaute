@@ -133,8 +133,8 @@ $(document).ready(function(){
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                 </div>
-                                <div class="review">
-                                	<a th:href="@{/review(itemid=${item_detail.itemid})}">REVIEW</a><br>
+                                <div class="review" th:if="${session.logincust != null}">
+                                	<a th:href="@{/review(itemid=${item_detail.itemid},custid=${session.logincust.custid})}">REVIEW</a><br>
                                 	<a th:href="@{/qna(itemid=${item_detail.itemid})}">Q&A</a>
                                 </div>
                             </div>

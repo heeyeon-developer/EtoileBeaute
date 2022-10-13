@@ -35,7 +35,8 @@
 $(document).ready(function(){
 	$('#reviewbtn').click(function(){
 		var itemid=$('#itemid').text();
-		location.href="/writereview?itemid="+itemid;
+		var custid=$('#custid').text();
+		location.href="/writereview?itemid="+itemid+"&custid="+custid;
 	});
 	
 });
@@ -69,6 +70,8 @@ $(document).ready(function(){
                 <div class="col-12 col-lg-12">
                     <div class="cart-title mt-50">
                         <h2>Review List</h2>
+                        <div id="itemid" th:text="${itemid}" style="display:none"></div>
+                        <div id="custid" th:text="${custid}" style="display:none"></div>
                     </div>
 
                     <div class="cart-table clearfix">
@@ -84,7 +87,7 @@ $(document).ready(function(){
                             <tbody>
                                 <tr th:each="i:${list}">
                                     <td class="cart_product_desc">
-                                        <h5 th:text="${i.custid}">White Modern Chair</h5><div id="itemid" th:text="${i.itemid}" style="display:none"></div>
+                                        <h5 th:text="${i.custid}">White Modern Chair</h5>
                                     </td>
                                     <td class="price">
                                         <span th:text="${i.review_text}">$130</span>
