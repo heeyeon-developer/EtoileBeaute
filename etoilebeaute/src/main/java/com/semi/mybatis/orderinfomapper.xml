@@ -20,7 +20,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		DELETE FROM orderinfo WHERE orderinfoid=#{orderinfoid}
 	</delete>
 	<select id="orderdetail" parameterType="Integer" resultType="OrderinfoDTO">
-		SELECT om.orderdate, it.img, oi.orderinfoid, oi.orderid, it.name, it.price, oi.cnt, (it.price * oi.cnt) AS order_price,
+		SELECT om.orderdate, it.img, oi.orderinfoid, oi.orderid, it.name, it.price, oi.cnt, (it.price * oi.cnt) AS order_price, cp.rate,
 		((it.price * oi.cnt) - ((it.price * oi.cnt)*(cp.rate/100))) AS total_price, cp.coupon_name FROM orderinfo oi
 		INNER JOIN item it ON oi.itemid = it.itemid
 		INNER JOIN ordermaster om ON oi.orderid = om.orderid
