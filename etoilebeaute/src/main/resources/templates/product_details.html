@@ -55,34 +55,34 @@
                     <div class="single_product_thumb">
                         <div id="product_details_slider" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
-                                <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url(img/product-img/pro-big-1.jpg);">
+                                <li class="active" data-target="#product_details_slider" data-slide-to="0" th:style="'background-image:url('+ @{'img/all/'+${item_detail.img}} +');'">
                                 </li>
-                                <li data-target="#product_details_slider" data-slide-to="1" style="background-image: url(img/product-img/pro-big-2.jpg);">
+                                <li data-target="#product_details_slider" data-slide-to="1" style="background-image: url(img/all/item_img1.jpg);">
                                 </li>
-                                <li data-target="#product_details_slider" data-slide-to="2" style="background-image: url(img/product-img/pro-big-3.jpg);">
+                                <li data-target="#product_details_slider" data-slide-to="2" style="background-image: url(img/all/item_img4.jpg);">
                                 </li>
-                                <li data-target="#product_details_slider" data-slide-to="3" style="background-image: url(img/product-img/pro-big-4.jpg);">
+                                <li data-target="#product_details_slider" data-slide-to="3" style="background-image: url(img/all/item_img3.jpg);">
                                 </li>
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <a class="gallery_img" th:src="'img/all/'+${item_detail.img}">
-                                        <img class="d-block w-100" src="img/product-img/pro-big-1.jpg" alt="First slide">
+                                    <a class="gallery_img" th:href="@{'img/all/'+${item_detail.img}}">
+                                        <img class="d-block w-100" th:src="'img/all/'+${item_detail.img}" alt="First slide">
                                     </a>
                                 </div>
                                 <div class="carousel-item">
-                                    <a class="gallery_img" href="img/product-img/pro-big-2.jpg">
-                                        <img class="d-block w-100" src="img/product-img/pro-big-2.jpg" alt="Second slide">
+                                    <a class="gallery_img" href="img/all/item_img1.jpg">
+                                        <img class="d-block w-100" src="img/all/item_img1.jpg" alt="Second slide">
                                     </a>
                                 </div>
                                 <div class="carousel-item">
-                                    <a class="gallery_img" href="img/product-img/pro-big-3.jpg">
-                                        <img class="d-block w-100" src="img/product-img/pro-big-3.jpg" alt="Third slide">
+                                    <a class="gallery_img" href="img/all/item_img4.jpg">
+                                        <img class="d-block w-100" src="img/all/item_img4.jpg" alt="Third slide">
                                     </a>
                                 </div>
                                 <div class="carousel-item">
-                                    <a class="gallery_img" href="img/product-img/pro-big-4.jpg">
-                                        <img class="d-block w-100" src="img/product-img/pro-big-4.jpg" alt="Fourth slide">
+                                    <a class="gallery_img" href="img/all/item_img3.jpg">
+                                        <img class="d-block w-100" src="img/all/item_img3.jpg" alt="Fourth slide">
                                     </a>
                                 </div>
                             </div>
@@ -117,7 +117,7 @@
                         </div>
 
                         <div class="short_overview my-5">
-                            <p>test</p>
+                            <p>밝은 오프닝 노트로 시작해 깊은 스파이스, 풍부한 흙내음, 건조한 우디 노트로 이어지는 묘한 매력의 향수</p>
                         </div>
 
                         <!-- Add to Cart Form -->
