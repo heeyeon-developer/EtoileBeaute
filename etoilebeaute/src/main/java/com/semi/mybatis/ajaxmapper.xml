@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.semi.mapper.AJAXMapper">
+	
+	<!--  cart 테이블 개수를 조회 -->
+	<select id="getCartCnt" resultType="Integer" parameterType="String">
+		SELECT sum(cnt) as cnt FROM cart
+		WHERE custid=#{custid}
+	</select>
+	
+	
+</mapper>

@@ -30,21 +30,29 @@
 
 <script>
 
-
-function GetCouponCnt(){
+ function getCartCnt(test){
 	$.ajax({
-		url:'/couponcnt',
+		url:'/cartcnt?custid='+test,
 		success:function(data){
-			$('#coupon_cnt').text(data);
+			$('#cart_cnt').text(data);
 		}
 	});
 };
+ 
 
 
 $(document).ready(function(){
-	GetCouponCnt();
+	var test= $('#test').text();
+	
+		if(test != null){
+		 
+			getCartCnt(test);
+			
+		}
+	
+	
+	
 });
-
 
 
 
@@ -111,6 +119,8 @@ $(document).ready(function(){
                     <li><a href="/about">About</a>
                     <li><a href="/shop">Shop</a></li>
                     <li><a href="/ordermaster">Order</a></li>
+                    <li><a href="">Ranking</a></li>
+                    <li><a href="">Seen</a></li>
                 </ul>
             </nav>
             <!-- Button Group --><!--로그인 하지 않았을때  -->
@@ -124,9 +134,9 @@ $(document).ready(function(){
             </div>
             <div class="amado-btn-group mt-30 mb-100" th:if="${session.logincust != null}">
             	<p style="text-align:center;">😀😀😀</p>
-            	<h6 th:text="${session.logincust.name}+ '님 환영합니다'"
+            	<h6  th:text="${session.logincust.name}+ '님 환영합니다'"
             	 style= "font-size:15px; text-align: center; 
-            	 "> </h6>
+            	 "> </h6><div id="test" th:text="${session.logincust.custid}"></div>
             	<ul id="user_info">
             		<table class="table table-hover">
 					    <thead>
@@ -134,15 +144,17 @@ $(document).ready(function(){
 					    <tbody style="border:1px solid white;">
 					      <tr>
 					        <td>💶COUPON:</td>
-					        <td></td>
+					        <td id="coupon_cnt"></td>
 					      </tr>
 					      <tr>
 					        <td>⏰접속시간:</td>
 					        <td></td>
 					      </tr>
 					      <tr>
+					      
 					        <td>🚀장바구니:</td>
-					        <td></td>
+					        <td id="cart_cnt"></td>
+					        
 					      </tr>
 					    </tbody>
 					  </table>

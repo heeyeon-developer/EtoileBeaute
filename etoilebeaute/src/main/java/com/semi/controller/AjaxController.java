@@ -3,31 +3,24 @@ package com.semi.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.semi.dto.CustDTO;
+import com.semi.mapper.AJAXMapper;
 import com.semi.service.CustService;
 
-@Controller
+@RestController
 public class AjaxController {
+		
 	@Autowired
-	CustService cust_service;
+	AJAXMapper mapper;
 	
-	@RequestMapping({"/checkid"})
-	public Object checkid(String cid) {
-		String result = "";
-		CustDTO cust = null;
-		
-		try {
-			cust_service.get(cid);
-			if(cust != null) {
-				result = "f";
-			} else {
-				result = "t";
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return result;
+
+	@RequestMapping("/cartcnt")
+	public String cartcnt(String custid) {
+		int cnt = mapper.getCartCnt(custid);
+		return cnt+"";
 	}
+	
 }
