@@ -13,7 +13,7 @@ import lombok.ToString;
 @ToString
 public class CartDTO {
 	private int cartid;
-	private String itemid;
+	private int itemid;
 	private String custid;
 	private int cnt;
 	private String cartdate;
