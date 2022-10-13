@@ -98,6 +98,12 @@ $(document).ready(function(){
 		
 
 	</script>
+<style>
+#aesop_btn,#jo_btn,#maison_btn,#santa_btn,#goutal_btn{
+	font-size: 15px;
+	font-family:'Arimo', sans-serif;
+}
+</style>
 
     <!-- Search Wrapper Area Start -->
     <div class="search-wrapper section-padding-100">
@@ -174,7 +180,7 @@ $(document).ready(function(){
 	                        <ul>
 	                        		<li><a id="aesop_btn" href="/cand_aesop">Aesop</a></li>
 	                        		<li><a id="jo_btn" href="/cand_jomalone">Jo malone</a></li>
-	                        		<li><a id="masion_btn" href="/cand_maison">Maison Margiela</a></li>
+	                        		<li><a id="maison_btn" href="/cand_maison">Maison Margiela</a></li>
 	                        </ul>
                         </li>
 					</form>
@@ -248,12 +254,15 @@ $(document).ready(function(){
                     <div th:each="sh:${shoplist}" class="col-12 col-sm-6 col-md-12 col-xl-6">
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
-                            <div class="product-img">
-                                <img th:src="'img/all/'+${sh.img}" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" th:src="'img/all/'+${sh.img}" alt="">
-                            </div>
-
+                            <a th:href="@{/product_details(itemid=${sh.itemid})}">
+                            	<div class="product-img">
+                                	<img th:src="'img/all/'+${sh.img}" alt="">
+                                
+                                	<!-- Hover Thumb -->
+                                	<img class="hover-img" th:src="'img/all/'+${sh.img}" alt="">
+                            	</div>
+							</a>
+							
                             <!-- Product Description -->
                             <div class="product-description d-flex align-items-center justify-content-between">
                                 <!-- Product Meta Data -->
@@ -293,11 +302,13 @@ $(document).ready(function(){
                     <div th:each="it:${aesoplist}" class="col-12 col-sm-6 col-md-12 col-xl-6">
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
-                            <div class="product-img">
-                                <img th:src="'img/aesop/'+${it.img}" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" th:src="'img/aesop/'+${it.img}" alt="">
-                            </div>
+                            <a th:href="@{/product_details(itemid=${it.itemid})}">
+	                            <div class="product-img">
+	                                <img th:src="'img/aesop/'+${it.img}" alt="">
+	                                <!-- Hover Thumb -->
+	                                <img class="hover-img" th:src="'img/aesop/'+${it.img}" alt="">
+	                            </div>
+	                        </a>
 
                             <!-- Product Description -->
                             <div class="product-description d-flex align-items-center justify-content-between">
@@ -337,11 +348,13 @@ $(document).ready(function(){
                     <div th:each="it:${jolist}" class="col-12 col-sm-6 col-md-12 col-xl-6">
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
-                            <div class="product-img">
-                                <img th:src="'img/jomalone/'+${it.img}" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" th:src="'img/jomalone/'+${it.img}" alt="">
-                            </div>
+                            <a th:href="@{/product_details(itemid=${it.itemid})}">
+	                            <div class="product-img">
+	                                <img th:src="'img/jomalone/'+${it.img}" alt="">
+	                                <!-- Hover Thumb -->
+	                                <img class="hover-img" th:src="'img/jomalone/'+${it.img}" alt="">
+	                            </div>
+	                        </a>
 
                             <!-- Product Description -->
                             <div class="product-description d-flex align-items-center justify-content-between">
@@ -379,11 +392,13 @@ $(document).ready(function(){
                     <div th:each="it:${maslist}" class="col-12 col-sm-6 col-md-12 col-xl-6">
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
-                            <div class="product-img">
-                                <img th:src="'img/maison/'+${it.img}" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" th:src="'img/maison/'+${it.img}" alt="">
-                            </div>
+                            <a th:href="@{/product_details(itemid=${it.itemid})}">
+	                            <div class="product-img">
+	                                <img th:src="'img/maison/'+${it.img}" alt="">
+	                                <!-- Hover Thumb -->
+	                                <img class="hover-img" th:src="'img/maison/'+${it.img}" alt="">
+	                            </div>
+	                        </a>
 
                             <!-- Product Description -->
                             <div class="product-description d-flex align-items-center justify-content-between">
@@ -421,11 +436,13 @@ $(document).ready(function(){
                     <div th:each="it:${sanlist}" class="col-12 col-sm-6 col-md-12 col-xl-6">
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
-                            <div class="product-img">
-                                <img th:src="'img/santa/'+${it.img}" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" th:src="'img/santa/'+${it.img}" alt="">
-                            </div>
+                            <a th:href="@{/product_details(itemid=${it.itemid})}">
+	                            <div class="product-img">
+	                                <img th:src="'img/santa/'+${it.img}" alt="">
+	                                <!-- Hover Thumb -->
+	                                <img class="hover-img" th:src="'img/santa/'+${it.img}" alt="">
+	                            </div>
+	                        </a>
 
                             <!-- Product Description -->
                             <div class="product-description d-flex align-items-center justify-content-between">
@@ -463,11 +480,13 @@ $(document).ready(function(){
                     <div th:each="it:${golist}" class="col-12 col-sm-6 col-md-12 col-xl-6">
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
-                            <div class="product-img">
-                                <img th:src="'img/goutal/'+${it.img}" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" th:src="'img/goutal/'+${it.img}" alt="">
-                            </div>
+                            <a th:href="@{/product_details(itemid=${it.itemid})}">
+	                            <div class="product-img">
+	                                <img th:src="'img/goutal/'+${it.img}" alt="">
+	                                <!-- Hover Thumb -->
+	                                <img class="hover-img" th:src="'img/goutal/'+${it.img}" alt="">
+	                            </div>
+	                        </a>
 
                             <!-- Product Description -->
                             <div class="product-description d-flex align-items-center justify-content-between">
@@ -504,11 +523,13 @@ $(document).ready(function(){
                     <div th:each="it:${aesopbody}" class="col-12 col-sm-6 col-md-12 col-xl-6">
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
-                            <div class="product-img">
-                                <img th:src="'img/aesop/'+${it.img}" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" th:src="'img/aesop/'+${it.img}" alt="">
-                            </div>
+                            <a th:href="@{/product_details(itemid=${it.itemid})}">
+	                            <div class="product-img">
+	                                <img th:src="'img/aesop/'+${it.img}" alt="">
+	                                <!-- Hover Thumb -->
+	                                <img class="hover-img" th:src="'img/aesop/'+${it.img}" alt="">
+	                            </div>
+	                        </a>
 
                             <!-- Product Description -->
                             <div class="product-description d-flex align-items-center justify-content-between">
@@ -545,11 +566,13 @@ $(document).ready(function(){
                     <div th:each="it:${jobody}" class="col-12 col-sm-6 col-md-12 col-xl-6">
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
-                            <div class="product-img">
-                                <img th:src="'img/jomalone/'+${it.img}" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" th:src="'img/jomalone/'+${it.img}" alt="">
-                            </div>
+                            <a th:href="@{/product_details(itemid=${it.itemid})}">
+	                            <div class="product-img">
+	                                <img th:src="'img/jomalone/'+${it.img}" alt="">
+	                                <!-- Hover Thumb -->
+	                                <img class="hover-img" th:src="'img/jomalone/'+${it.img}" alt="">
+	                            </div>
+	                        </a>
 
                             <!-- Product Description -->
                             <div class="product-description d-flex align-items-center justify-content-between">
@@ -586,11 +609,13 @@ $(document).ready(function(){
                     <div th:each="it:${mabody}" class="col-12 col-sm-6 col-md-12 col-xl-6">
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
-                            <div class="product-img">
-                                <img th:src="'img/maison/'+${it.img}" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" th:src="'img/maison/'+${it.img}" alt="">
-                            </div>
+                            <a th:href="@{/product_details(itemid=${it.itemid})}">
+	                            <div class="product-img">
+	                                <img th:src="'img/maison/'+${it.img}" alt="">
+	                                <!-- Hover Thumb -->
+	                                <img class="hover-img" th:src="'img/maison/'+${it.img}" alt="">
+	                            </div>
+	                        </a>
 
                             <!-- Product Description -->
                             <div class="product-description d-flex align-items-center justify-content-between">
@@ -627,11 +652,13 @@ $(document).ready(function(){
                     <div th:each="it:${santabody}" class="col-12 col-sm-6 col-md-12 col-xl-6">
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
-                            <div class="product-img">
-                                <img th:src="'img/santa/'+${it.img}" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" th:src="'img/santa/'+${it.img}" alt="">
-                            </div>
+                            <a th:href="@{/product_details(itemid=${it.itemid})}">
+	                            <div class="product-img">
+	                                <img th:src="'img/santa/'+${it.img}" alt="">
+	                                <!-- Hover Thumb -->
+	                                <img class="hover-img" th:src="'img/santa/'+${it.img}" alt="">
+	                            </div>
+	                        </a>
 
                             <!-- Product Description -->
                             <div class="product-description d-flex align-items-center justify-content-between">
@@ -668,11 +695,13 @@ $(document).ready(function(){
                     <div th:each="it:${aesopcand}" class="col-12 col-sm-6 col-md-12 col-xl-6">
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
-                            <div class="product-img">
-                                <img th:src="'img/aesop/'+${it.img}" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" th:src="'img/aesop/'+${it.img}" alt="">
-                            </div>
+                            <a th:href="@{/product_details(itemid=${it.itemid})}">
+	                            <div class="product-img">
+	                                <img th:src="'img/aesop/'+${it.img}" alt="">
+	                                <!-- Hover Thumb -->
+	                                <img class="hover-img" th:src="'img/aesop/'+${it.img}" alt="">
+	                            </div>
+	                        </a>
 
                             <!-- Product Description -->
                             <div class="product-description d-flex align-items-center justify-content-between">
@@ -709,11 +738,13 @@ $(document).ready(function(){
                     <div th:each="it:${jocand}" class="col-12 col-sm-6 col-md-12 col-xl-6">
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
-                            <div class="product-img">
-                                <img th:src="'img/jomalone/'+${it.img}" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" th:src="'img/jomalone/'+${it.img}" alt="">
-                            </div>
+                            <a th:href="@{/product_details(itemid=${it.itemid})}">
+	                            <div class="product-img">
+	                                <img th:src="'img/jomalone/'+${it.img}" alt="">
+	                                <!-- Hover Thumb -->
+	                                <img class="hover-img" th:src="'img/jomalone/'+${it.img}" alt="">
+	                            </div>
+	                        </a>
 
                             <!-- Product Description -->
                             <div class="product-description d-flex align-items-center justify-content-between">
@@ -750,11 +781,13 @@ $(document).ready(function(){
                     <div th:each="it:${maisoncand}" class="col-12 col-sm-6 col-md-12 col-xl-6">
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
-                            <div class="product-img">
-                                <img th:src="'img/maison/'+${it.img}" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" th:src="'img/maison/'+${it.img}" alt="">
-                            </div>
+                            <a th:href="@{/product_details(itemid=${it.itemid})}">
+	                            <div class="product-img">
+	                                <img th:src="'img/maison/'+${it.img}" alt="">
+	                                <!-- Hover Thumb -->
+	                                <img class="hover-img" th:src="'img/maison/'+${it.img}" alt="">
+	                            </div>
+	                        </a>
 
                             <!-- Product Description -->
                             <div class="product-description d-flex align-items-center justify-content-between">
