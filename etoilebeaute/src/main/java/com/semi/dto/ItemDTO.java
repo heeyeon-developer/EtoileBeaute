@@ -21,4 +21,5 @@ public class ItemDTO {
 	private String img; 
 	private Date itemdate; 
 	private int stock; 
+	private String detail_img; 
 }
