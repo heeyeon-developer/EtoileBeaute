@@ -157,7 +157,7 @@ $(document).ready(function(){
                                 </div>
                             </div>
                         </form>
-                        <button id="addcart_btn" name="addtocart" value="5" class="btn amado-btn">
+                        <button id="addcart_btn" name="addtocart" value="5" class="btn amado-btn" th:if="${session.logincust != null}">
                             	Add to cart
                             	<span id="itemid" th:text="${item_detail.itemid}" style="display:none"></span>
                             	<span id="custid" th:text="${session.logincust.custid}" style="display:none"></span>
