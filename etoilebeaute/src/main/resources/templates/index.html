@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cd162e5636d02b26958221c4c2106850"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
@@ -185,7 +187,7 @@ $(document).ready(function(){
 					      </tr>
 					      <tr>
 					      
-					        <td colspan="2">🚀장바구니 :</td>
+					        <td colspan="2"><a th:href="@{/cart(custid=${session.logincust.custid})}">🚀장바구니 :</a></td>
 					        <td id="cart_cnt"></td>
 					        
 					      </tr>
@@ -195,7 +197,6 @@ $(document).ready(function(){
             </div>
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
-                <a th:href="@{/cart(custid=${session.logincust.custid})}" class="cart-nav" th:if="${session.logincust != null}"><img src="img/core-img/cart.png" alt=""> Cart<span>(0)</span></a>
                 <a href="#" class="fav-nav"><img src="img/core-img/favorites.png" alt=""> Favorite</a>
                 <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Search</a>
             </div>
