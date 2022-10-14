@@ -95,7 +95,18 @@ public class AjaxController {
 		
 		return ja;
 	}
-	
 
-
+	@RequestMapping({"/getmarker2"})         //로케이션에 대한 정보 요청하면~ 
+	public Object getmarker2(String loc) {
+		JSONArray ja = new JSONArray();
+		
+		JSONObject jo1 = new JSONObject();
+		jo1.put("title", "Étoile Beauté");
+		jo1.put("target", "http://www.naver.com");
+		jo1.put("lat", 37.56014367008594);
+		jo1.put("lng", 126.98071970839374);
+		ja.add(jo1);
+		
+		return ja;
+	}
 }

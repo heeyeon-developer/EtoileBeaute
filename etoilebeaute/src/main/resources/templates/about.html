@@ -26,36 +26,44 @@
 	border:1px solid black; 
 }
 </style>
+
+<style>
+#button{
+    
+}
+</style>
+
+
 <script>
-var lat = 37.5276891;
-var lng = 127.051432;
+var lat = 37.56014367008594;
+var lng = 126.98071970839374;
 var map;
 
 function display(){
 	var mapContainer = document.querySelector('#map'); 
 	var mapOption = { 
 	        center: new kakao.maps.LatLng(lat, lng), // 지도의 중심좌표
-	        level: 8 // 지도의 확대 레벨
+	        level: 4 // 지도의 확대 레벨
 	    };
 	map = new kakao.maps.Map(mapContainer, mapOption); 
 };
 
 
 
-function displaymarker(data){
+function displaymarker(){
 	var imageSrc = "/img/mk.png";  //어떤 이미지를 올릴 것인가?
     var imageSize = new kakao.maps.Size(24, 35);    
-    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);   //이미지 사이즈 조정 및 bla bla 
 	
-	for(var i=0; i<data.length; i++){
+	  //for 문 빼고 lat이랑 데이터 lng넣어보기
 		 var marker = new kakao.maps.Marker({  //여기다가 이미지를 집어넣자
 	        map: map,
-	        position: new kakao.maps.LatLng(data[i].lat, data[i].lng),
+	        position: new kakao.maps.LatLng(37.56014367008594, 126.98071970839374),
 		 });
 		 
-		 var iwContent = '<h3>'+data[i].title+'</h3>';
-		 iwContent += '<img width = "50px" src = "/img/'+data[i].img+'">';
-	     var iwPosition = new kakao.maps.LatLng(data[i].lat, data[i].lng);
+		 /* var iwContent = '<h3>'+data[i].title+'</h3>';
+		 iwContent += '<img width = "50px" src = "/img/'+data[i].img+'">'; */
+	     var iwPosition = new kakao.maps.LatLng(37.56014367008594, 126.98071970839374);
 
 		 var infowindow = new kakao.maps.InfoWindow({
 		     position : iwPosition, 
@@ -63,8 +71,7 @@ function displaymarker(data){
 		 });
 		 kakao.maps.event.addListener(marker, 'mouseover', mouseoverListener(marker, infowindow));
 		 kakao.maps.event.addListener(marker, 'mouseout', mouseoutListener(marker, infowindow));
-		 kakao.maps.event.addListener(marker, 'click', mouseclickListener(data[i].target));
-	};
+		/*  kakao.maps.event.addListener(marker, 'click', mouseclickListener(data[i].target)); */
 	
 	function mouseoverListener(marker, infowindow) {
 		return function(){
@@ -101,15 +108,10 @@ function go(lat,lng,loc){  //위도 경도 지역명
 
 $(document).ready(function(){
 	display();
-	$('#bt1').click(function(){
-		go(37.5527401,126.9930781,'G');
-	});
+	displaymarker();
+	
 });
 </script>
-
-
-
-
 
 <div class="container">
 <div class="col-sm-5">
@@ -138,7 +140,7 @@ $(document).ready(function(){
   </p>
   
   
-  <button id="bt1">Étoile Beauté</button>
+  <button type="button" class="btn btn-default">Étoile Beauté</button>
   <div id="map"></div> 
   
 </div>
