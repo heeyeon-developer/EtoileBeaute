@@ -32,6 +32,7 @@ public class PayController {
 	public String main(Model model, String custid) {
 		List<CartDTO> list = null;
 		CustDTO cust = null;
+		
 		try {
 			cust = cust_service.get(custid);
 			list = cart_service.get_cartitem(custid);
