@@ -32,11 +32,12 @@ public class PayController {
 	public String main(Model model, String custid) {
 		List<CartDTO> list = null;
 		CustDTO cust = null;
+		
 		try {
 			cust = cust_service.get(custid);
 			list = cart_service.get_cartitem(custid);
 			
-			model.addAttribute("cust", cust);
+			model.addAttribute("cust", cust);  
 			model.addAttribute("list", list);
 			model.addAttribute("center", "pay");
 		} catch (Exception e) {

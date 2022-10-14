@@ -67,20 +67,20 @@ $(document).ready(function(){
                                     </td>
                                     <td class="cart_product_desc" th:text="${li.itemname}" id="itemname"></td>
                                     <td class="qty" th:text="${li.cnt}" id="cnt"></td>
-                                    <td class="price" th:text="${li.order_price}" id="order_price"></td>
+                                    <td class="price" th:text="${li.itemprice}" id="order_price"></td>
                                 </tr>
                              </tbody>
                          </table>
                          </div>
-   						
+   						  
    						
 						<div class="input-group mb-3">
 						  <span class="input-group-text" id="basic-addon1">받는 분</span>
-						  <input type="text" class="form-control" placeholder="" aria-label="custname" aria-describedby="basic-addon1" id="custname" name="custname">
+						  <input th:text="${cust.name}" type="text" class="form-control" placeholder="" aria-label="custname" aria-describedby="basic-addon1" id="custname" name="custname">
 						 </div>
 						 <div class="input-group mb-3">
 						  <span class="input-group-text" id="basic-addon1">연락처</span>
-						  <input type="text" class="form-control" aria-label="phone" aria-describedby="basic-addon1" id="phone" name="phone">
+						  <input th:text="${cust.phone}"type="text" class="form-control" aria-label="phone" aria-describedby="basic-addon1" id="phone" name="phone">
 						</div>
 						<div class="input-group mb-3">
 						  <span class="input-group-text" id="basic-addon1">우편번호</span>
