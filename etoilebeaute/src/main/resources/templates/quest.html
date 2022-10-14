@@ -42,6 +42,16 @@ $(document).ready(function(){
 	      
 	   alert(str);
 	}); 
+	
+	$('#questbtn').click(function(){
+		var itemid=$('#itemid').text();
+		var custid=$('#custid').text();
+		alert(itemid+" "+custid);
+		location.href="/writequest?itemid="+itemid+"&custid="+custid;
+	});
+		
+
+
 });
 
 </script>
@@ -73,6 +83,8 @@ $(document).ready(function(){
                 <div class="col-12 col-lg-12">
                     <div class="cart-title mt-50">
                         <h2>Quest List</h2>
+                        <div id="itemid" th:text="${itemid}" style="display:none"></div>
+                        <div id="custid" th:text="${custid}" style="display:none"></div>
                     </div>
 
                     <div class="cart-table clearfix">
@@ -96,6 +108,9 @@ $(document).ready(function(){
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <div th:if="${session.logincust != null}">
+                    	<button id="questbtn" type="button" class="btn btn-default">질문 작성하기</button>
                     </div>
                 </div>
             </div>

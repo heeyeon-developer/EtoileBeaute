@@ -135,7 +135,7 @@ $(document).ready(function(){
                                 </div>
                                 <div class="review" th:if="${session.logincust != null}">
                                 	<a th:href="@{/review(itemid=${item_detail.itemid},custid=${session.logincust.custid})}">REVIEW</a><br>
-                                	<a th:href="@{/qna(itemid=${item_detail.itemid})}">Q&A</a>
+                                	<a th:href="@{/qna(itemid=${item_detail.itemid},custid=${session.logincust.custid})}">Q&A</a>
                                 </div>
                             </div>
                             <!-- Avaiable -->

@@ -1,6 +1,23 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 
 <script>
+
+function addcart(cust_id, item_id){
+	
+	$.ajax({
+		url:'addcart',
+		data:{
+			'custid':cust_id,
+			'itemid':item_id,
+			'cnt':1				
+		},
+		success:function(data){
+			alert("상품을 카트에 담았습니다.");//확인 필요
+		}
+	});
+	alert("상품을 카트에 담았습니다.");
+};
+
 $(document).ready(function(){
 	/* perfumes_form */
 	$('#aesop_btn').click(function(){
@@ -92,12 +109,9 @@ $(document).ready(function(){
 		$('#cand_form').submit();
 	});
 	
-	
-	
 });
-		
+</script>
 
-	</script>
 <style>
 #aesop_btn,#jo_btn,#maison_btn,#santa_btn,#goutal_btn{
 	font-size: 15px;
@@ -282,8 +296,8 @@ $(document).ready(function(){
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                     </div>
-                                    <div class="cart">
-                                        <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
+                                    <div class="cart" th:if="${session.logincust != null}">
+                                        <a th:onclick="addcart([[${session.logincust.custid}]],[[${sh.itemid}]]);" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
                                     </div>
                                 </div>
                             </div>

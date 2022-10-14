@@ -20,11 +20,13 @@ public class QnAController {
 	QuestService service;
 	
 	@RequestMapping("/qna")
-	public String quest(Model model, Integer itemid) {
+	public String quest(Model model, Integer itemid, String custid) {
 		List<QuestDTO> list = null;
 		
 		try {
 			list = service.get_itemquest(itemid);
+			model.addAttribute("itemid",itemid);
+			model.addAttribute("custid",custid);
 			model.addAttribute("list",list);
 			model.addAttribute("center","quest");
 		} catch (Exception e) {
@@ -34,5 +36,14 @@ public class QnAController {
 		
 		return "index";
 	}
+	
+	@RequestMapping("/writequest")
+	public String writequest(Model model, int itemid, String custid) {
+		model.addAttribute("itemid",itemid);
+		model.addAttribute("custid",custid);
+		model.addAttribute("center","writequest");
+		return "index";
+	}
+	
 }
 
