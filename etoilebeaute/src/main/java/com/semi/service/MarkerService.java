@@ -40,7 +40,7 @@ public class MarkerService implements MyService<Integer,MarkerDTO> {
 	}
 
 	@Override
-	public List<MarkerDTO> get() throws Exception {
+	public List<MarkerDTO> getall() throws Exception {
 		// TODO Auto-generated method stub
 		return mapper.selectall();
 	}

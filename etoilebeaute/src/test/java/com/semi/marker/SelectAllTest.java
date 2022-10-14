@@ -22,7 +22,7 @@ class SelectAllTest{
 		List<MarkerDTO> list = null;
 		
 		try {
-			list = service.get();
+			list = service.getall();
 			for(MarkerDTO m : list) {
 				System.out.println(m);
 			}

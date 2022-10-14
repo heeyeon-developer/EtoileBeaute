@@ -32,16 +32,19 @@ public class OrderinfoService implements MyService<Integer, OrderinfoDTO>{
 	}
 
 	@Override
-	public OrderinfoDTO get(Integer k) throws Exception {b
+	public OrderinfoDTO get(Integer k) throws Exception {
 		return mapper.select(k);
 	}
 
 	@Override
-	public List<OrderinfoDTO> get() throws Exception {
+	public List<OrderinfoDTO> getall() throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	public List<OrderinfoDTO> orderdetail(int orderinfoid) throws Exception {
+		return mapper.orderdetail(orderinfoid);
+	}
 	
 
 }

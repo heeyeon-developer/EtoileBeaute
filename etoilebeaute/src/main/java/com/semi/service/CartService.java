@@ -39,7 +39,7 @@ public class CartService implements MyService<Integer,CartDTO> {
 	}
 
 	@Override
-	public List<CartDTO> get() throws Exception {
+	public List<CartDTO> getall() throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}

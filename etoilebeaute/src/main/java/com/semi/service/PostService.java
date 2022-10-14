@@ -40,7 +40,7 @@ public class PostService implements MyService<Integer,PostDTO> {
 	}
 
 	@Override
-	public List<PostDTO> get() throws Exception {
+	public List<PostDTO> getall() throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
