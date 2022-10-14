@@ -23,10 +23,12 @@ public class CartController {
 		try {
 			list = service.get_cartitem(custid);
 			model.addAttribute("list",list);
+			model.addAttribute("custid", custid);
 			model.addAttribute("center","cart");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
 		}
 		
 		return "index";

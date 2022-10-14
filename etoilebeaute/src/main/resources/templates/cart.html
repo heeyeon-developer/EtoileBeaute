@@ -9,6 +9,14 @@ function del(cart_id){
 	}
 }
 
+$(document).ready(function(){
+	$('#paybtn').click(function(){
+		var custid=$('#custid').text();
+		alert(custid);
+		location.href="/pay?custid="+custid;
+	});
+});
+
 function calcSum() {
   // table element 찾기
   var rows = document.getElementById('cart_table').getElementsByTagName("tr");
@@ -71,6 +79,7 @@ $(document).ready(function(){
                 <div class="col-8 col-lg-8">
                     <div class="cart-title mt-50">
                         <h2>Shopping Cart</h2>
+                        <div id="custid" th:text="${custid}" style="display:none"></div>
                     </div>
 
                     <div class="cart-table clearfix">
@@ -110,8 +119,8 @@ $(document).ready(function(){
                             <li><span>delivery:</span> <span>Free</span></li>
                             <li><span>total:</span> <span id="total">$140.00</span></li>
                         </ul>
-                        <div class="cart-btn mt-100">
-                            <a href="cart.html" class="btn amado-btn w-100">Checkout</a>
+                        <div th:if="${session.logincust != null}" class="cart-btn mt-100">
+                            <button id="paybtn" type="button" class="btn btn-default">Checkout</button>
                         </div>
                     </div>
                 </div>
