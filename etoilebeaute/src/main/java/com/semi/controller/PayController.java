@@ -37,7 +37,7 @@ public class PayController {
 			cust = cust_service.get(custid);
 			list = cart_service.get_cartitem(custid);
 			
-			model.addAttribute("cust", cust);
+			model.addAttribute("cust", cust);  
 			model.addAttribute("list", list);
 			model.addAttribute("center", "pay");
 		} catch (Exception e) {
