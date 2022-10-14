@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.semi.mapper.PostMapper">
+	
+	<select id="select" parameterType="Integer" resultType="PostDTO">
+		SELECT * FROM post WHERE postid=#{postid}
+	</select>
+	<select id="selectall" resultType="PostDTO">
+		SELECT * FROM post
+	</select>
+	<insert id="insert" parameterType="PostDTO">
+		INSERT INTO post VALUES (NULL,#{custid},#{addr},#{detail_addr},#{zipcode},#{bookmark})
+	</insert>
+	<update id="update" parameterType="PostDTO">
+		UPDATE post SET custid=#{custid}, addr=#{addr}, detail_addr=#{detail_addr}, zipcode=#{zipcode}, bookmark=#{bookmark}, WHERE postid=#{postid}
+	</update>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM post WHERE postid=#{postid}
+	</delete>
+	<select id="getcustpost" parameterType="String" resultType="PostDTO">
+		SELECT * FROM post WHERE custid = #{custid}
+	</select>
+	
+	
+</mapper>

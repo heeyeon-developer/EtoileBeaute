@@ -19,8 +19,8 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<delete id="delete" parameterType="Integer">
 		DELETE FROM pay WHERE payid=#{payid}
 	</delete>
-	<select id="getpay" parameterType="Integer" resultType="PayDTO">
-		SELECT cu.custid, it.img, pa.payid, pa.orderid, cu.name AS custname,
+	<select id="getpay" parameterType="String" resultType="PayDTO">
+		SELECT cp.coupon_name, cu.custid, it.img, pa.payid, pa.orderid, cu.name AS custname,
 		cu.phone, cu.addr, po.detail_addr, po.zipcode,
 		it.name AS itemname, ca.cnt, it.price, (it.price * ca.cnt) AS order_price,
 		((it.price * ca.cnt) - ((it.price * ca.cnt)*(cp.rate/100))) AS total_price FROM pay pa
@@ -29,7 +29,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		INNER JOIN cart ca ON pa.custid = ca.custid
 		INNER JOIN item it ON ca.itemid = it.itemid
 		INNER JOIN post po ON cu.custid = po.custid
-		WHERE payid = #{payid}
+		WHERE pa.custid = #{custid}
 	</select>
 	
 	

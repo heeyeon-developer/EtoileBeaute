@@ -17,33 +17,31 @@ public class PostService implements MyService<Integer,PostDTO> {
 
 	@Override
 	public void register(PostDTO v) throws Exception {
-		// TODO Auto-generated method stub
-		
+		mapper.insert(v);
 	}
 
 	@Override
 	public void remove(Integer k) throws Exception {
-		// TODO Auto-generated method stub
-		
+		mapper.delete(k);
 	}
 
 	@Override
 	public void modify(PostDTO v) throws Exception {
-		// TODO Auto-generated method stub
-		
+		mapper.update(v);
 	}
 
 	@Override
 	public PostDTO get(Integer k) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.select(k);
 	}
 
 	@Override
 	public List<PostDTO> getall() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.selectall();
 	}
 	
+	public PostDTO getcustpost(String custid) throws Exception{
+		return mapper.getcustpost(custid);
+	}
 	
 }

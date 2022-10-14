@@ -11,5 +11,5 @@ import com.semi.frame.MyMapper;
 @Mapper
 @Repository
 public interface PayMapper extends MyMapper<Integer, PayDTO> {
-	public List<PayDTO> getpay(int payid) throws Exception;
+	public List<PayDTO> getpay(String custid) throws Exception;
 }

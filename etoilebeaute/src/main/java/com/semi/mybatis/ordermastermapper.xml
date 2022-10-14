@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM ordermaster
 	</select>
 	<insert id="insert" parameterType="OrdermasterDTO">
-		INSERT INTO ordermaster VALUES (NULL,#{couponid},#{custid},#{orderdate},#{cnt},#{total_price})
+		INSERT INTO ordermaster VALUES (NULL,#{couponid},#{custid},NOW(),#{cnt},#{total_price})
 	</insert>
 	<update id="update" parameterType="OrdermasterDTO">
 		UPDATE ordermaster SET couponid=#{couponid}, custid=#{custid}, orderdate=#{orderdate}, cnt=#{cnt}, total_price=#{total_price} WHERE orderid=#{orderid}
@@ -25,6 +25,5 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		INNER JOIN cust cu ON om.custid = cu.custid
 		WHERE cu.custid = #{custid};
 	</select>
-	
 	
 </mapper>

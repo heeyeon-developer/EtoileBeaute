@@ -5,11 +5,17 @@
 </style>
 <script>
 $(document).ready(function(){
-	$('#pay_form > button').click(function(){
-		var custid=$('#custid').text();
-		alert(custid);
-		location.href="/pay?custid="+custid;
+	$('#paybtn').click(function(){
+		var custid = '[[${session.logincust.custid}]]';
+		var custname = $('#custname').val();
+		var phone = $('#phone').val();
+		var addr = $('#addr').val();
+		var zipcode = $('#zipcode').val();
+		var detail_addr = $('#detail_addr').val();
+		var pay_op = $('#pay_op').val();
+		location.href="/ordermaster?custid="+custid;
 	});
+	 
 });
 
 </script>
@@ -47,8 +53,7 @@ $(document).ready(function(){
                         <h2>Pay</h2>
                         <div id="custid" th:text="${custid}" style="display:none"></div>
                     </div>
-   						
-   						<form id="pay_form"></form>
+
    						
    						<div class="cart-table clearfix">
                         <table id="cart_table" class="table table-responsive">
@@ -63,7 +68,7 @@ $(document).ready(function(){
                             <tbody>
                                 <tr th:each="li:${list}">
                                     <td class="cart_product_img">
-                                        <a href="#"><img th:src="|img/all/${li.itemimg}|" alt="Product" id="img"></a>
+                                        <a href="#"><img th:src="|img/all/${li.itemimg}|" alt="Product" id="img" width="100px"></a>
                                     </td>
                                     <td class="cart_product_desc" th:text="${li.itemname}" id="itemname"></td>
                                     <td class="qty" th:text="${li.cnt}" id="cnt"></td>
@@ -73,29 +78,29 @@ $(document).ready(function(){
                          </table>
                          </div>
    						  
-   						
+   						<form id="pay_form">
 						<div class="input-group mb-3">
 						  <span class="input-group-text" id="basic-addon1">받는 분</span>
-						  <input th:text="${cust.name}" type="text" class="form-control" placeholder="" aria-label="custname" aria-describedby="basic-addon1" id="custname" name="custname">
+						  <input th:value="${cust.name}" readonly="readonly" type="text" class="form-control" placeholder="" aria-label="custname" aria-describedby="basic-addon1" id="custname" name="custname">
 						 </div>
 						 <div class="input-group mb-3">
 						  <span class="input-group-text" id="basic-addon1">연락처</span>
-						  <input th:text="${cust.phone}"type="text" class="form-control" aria-label="phone" aria-describedby="basic-addon1" id="phone" name="phone">
+						  <input th:value="${cust.phone}" readonly="readonly" type="text" class="form-control" aria-label="phone" aria-describedby="basic-addon1" id="phone" name="phone">
 						</div>
 						<div class="input-group mb-3">
-						  <span class="input-group-text" id="basic-addon1">우편번호</span>
-						  <input type="text" class="form-control" aria-label="zipcode" aria-describedby="basic-addon1" id="zipcode" name="zipcode">
 						  <span class="input-group-text" id="basic-addon1">주소</span>
-						  <input type="text" class="form-control" aria-label="addr" aria-describedby="basic-addon1" id="addr" name="addr">
+						  <input th:value="${post.addr}" readonly="readonly" class="form-control" aria-label="addr" aria-describedby="basic-addon1" id="addr" name="addr">
+						  <span class="input-group-text" id="basic-addon1">우편번호</span>
+						  <input th:value="${post.zipcode}" readonly="readonly" class="form-control" aria-label="zipcode" aria-describedby="basic-addon1" id="zipcode" name="zipcode">
 						</div>
 						<div class="input-group mb-3">
 						  <span class="input-group-text" id="basic-addon1">상세주소</span>
-						  <input type="text" class="form-control" aria-label="detail_addr" aria-describedby="basic-addon1" id="detail_addr" name="detail_addr">
+						  <input th:value="${post.detail_addr}" readonly="readonly" type="text" class="form-control" aria-label="detail_addr" aria-describedby="basic-addon1" id="detail_addr" name="detail_addr">
 						</div>
 						
 						<div class="input-group mb-3">
 						  <label class="input-group-text" for="inputGroupSelect01">결제 방법</label>
-						  <select class="form-select" id="inputGroupSelect01">
+						  <select id="pay_op" class="form-select">
 						    <option selected>결제 방법을 선택하세요</option>
 						    <option value="1">카드결제</option>
 						    <option value="2">무통장입금</option>
@@ -103,11 +108,11 @@ $(document).ready(function(){
 						  </select>
 						</div>
 						
+                    </form>
+                    
 						<div th:if="${session.logincust != null}">
                     	<button id="paybtn" type="button" class="btn btn-default">결제하기</button>
-                    </div>
-                        
-                    </form>
+                   		</div>
                         
                 </div>
             </div>

@@ -1,4 +1,4 @@
-package com.semi.pay;
+package com.semi.post;
 
 import java.util.List;
 
@@ -6,27 +6,27 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.semi.dto.PayDTO;
-import com.semi.service.PayService;
+import com.semi.dto.ItemDTO;
+import com.semi.dto.PostDTO;
+import com.semi.service.PostService;
 
 @SpringBootTest
-class GetPay {
+class GetCustPost {
 
 	@Autowired
-	PayService service;
+	PostService service;
 	
 	@Test
 	void contextLoads() {
-		List<PayDTO> list = null;
+		PostDTO post = null;
 		try {
-			list = service.getpay("KanghoSong");
+			post = service.getcustpost("KanghoSong");
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		for(PayDTO p:list) {
-			System.out.println(p);
-		}
+		System.out.println(post);
 		
 	}
 

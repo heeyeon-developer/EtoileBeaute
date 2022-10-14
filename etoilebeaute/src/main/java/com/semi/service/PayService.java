@@ -47,8 +47,8 @@ public class PayService implements MyService<Integer,PayDTO> {
 		return mapper.selectall();
 	}
 	
-	public List<PayDTO> getpay(int payid) throws Exception {
-		return mapper.getpay(payid);
+	public List<PayDTO> getpay(String custid) throws Exception {
+		return mapper.getpay(custid);
 	}
 
 }
