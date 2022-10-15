@@ -28,10 +28,30 @@
 </style>
 
 <style>
-#button{
-    
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap');
+
+.container{
+
+	padding:100px;
+	margin:100px;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-weight: 400;
+    font-size: 12px;
+    height: 55px
 }
+
+
+#title_text{
+	padding-top:10px;
+	font-family: 'Nanum Gothic', sans-serif;
+    background-color:none;
+}
+
 </style>
+
+<span style = " font-size:3.5em;  color: black;"></span>
+
+
 
 
 <script>
@@ -115,7 +135,7 @@ $(document).ready(function(){
 
 <div class="container">
 <div class="col-sm-5">
-  <h4>About Us</h4>
+  <h4 style="font-size:40px; font-weight:bold; text-align:center;">About Us</h4>
   
   <p id = "headline">
     충격적일 정도로 매혹적인 이 향수들과 함께 모험을 떠나세요.
@@ -136,11 +156,12 @@ $(document).ready(function(){
      Étoile Beauté. 각각 프랑스어로 "별", "아름다움"이라는 뜻을 가지고 있습니다.
      우리는 향수를 사용함으로써 당신이 가진 본연의 아름다움을 별처럼 반짝반짝 빛나게 하려고 합니다. 
      저희 회사와 함께 행복한 구매 되시길 기원합니다. 
-     오늘도 이용해 주셔서 감사합니다. Je vous souhaite bonne chance!
+     오늘도 이용해 주셔서 감사합니다.
   </p>
+  <h4 style ="font-weight:bold; color:blue";>Je vous souhaite bonne chance!</h4>
   
   
-  <button type="button" class="btn btn-default">Étoile Beauté</button>
+  <button type="button" font-weight:500; class="btn btn-primary">Étoile Beauté</button>
   <div id="map"></div> 
   
 </div>
