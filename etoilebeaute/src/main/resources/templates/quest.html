@@ -82,7 +82,7 @@ $(document).ready(function(){
     <div class="cart-table-area section-padding-10">
         <div>
             <div class="row">
-                <div class="col-12 col-lg-12">
+                <div class="col-12 col-lg-11">
                     <div class="cart-title mt-50">
                         <h2>Quest List</h2>
                         <div id="itemid" th:text="${itemid}" style="display:none"></div>
@@ -106,7 +106,7 @@ $(document).ready(function(){
                                     </td>
                                     <td><a id="quest" href="#" th:onclick="check([[${i.questid}]]);" th:text="${i.title}">id</a></td>
                                     <td th:text="${i.rdate}"></td>
-                                    <td>답변 여부</td>
+                                    <td><a th:href="@{/answer(questid=${i.questid})}">답변 여부</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -114,6 +114,7 @@ $(document).ready(function(){
                     <div th:if="${session.logincust != null}">
                     	<button id="questbtn" type="button" class="btn btn-default">질문 작성하기</button>
                     </div>
+                    
                 </div>
             </div>
         </div>

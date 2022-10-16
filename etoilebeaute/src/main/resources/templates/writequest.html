@@ -1,13 +1,12 @@
 <script>
 
 $(document).ready(function(){
-	$('#savereview_btn').click(function(){
+	$('#savequest_btn').click(function(){
 		var custid = '[[${session.logincust.custid}]]';
 		var itemid = $('#itemid').text();
-		var star = $('#star').val();
-		var dsat = $('#dsat').val();
-		var reviewtext = $('#review_text').val();
-		location.href="/registerreview?custid="+custid+"&itemid="+itemid+"&reviewtext="+reviewtext+"&star="+star+"&dsat="+dsat;
+		var title = $('#title').val();
+		var quest_text = $('#quest_text').val();
+		location.href="/registerquest?custid="+custid+"&itemid="+itemid+"&title="+title+"&quest_text="+quest_text;
 	});
 	
 	
@@ -25,17 +24,18 @@ $(document).ready(function(){
                         <h2>질문에 대해 빠른 답변 드릴 수 있도록 하겠습니다:)</h2>
                     </div>
 
-                    <form id="review_form" method="post">
+                    <form id="quest_form" method="post">
                         <div class="row">
                             <div class="col-12 mb-3">
-                            	<input type="text" class="form-control" id="company" placeholder="제목을 입력해주세요." value="">
+                            	<div id="itemid" th:text="${itemid}" style="display:none"></div>
+                            	<input type="text" class="form-control" id="title" placeholder="제목을 입력해주세요.">
                             </div>
                             <div class="col-12 mb-3">
-                                <textarea id="review_text" name="comment" class="form-control w-100" cols="30" rows="10" placeholder="내용을 입력해주세요."></textarea>
+                                <textarea id="quest_text" name="comment" class="form-control w-100" cols="30" rows="10" placeholder="내용을 입력해주세요."></textarea>
                             </div>
                         </div>
                     </form>
-                    <button id="savereview_btn" type="button" class="btn btn-default">질문 등록</button>
+                    <button id="savequest_btn" type="button" class="btn btn-default">질문 등록</button>
                 </div>
             </div>
         </div>
