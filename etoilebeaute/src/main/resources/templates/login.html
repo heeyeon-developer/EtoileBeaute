@@ -43,8 +43,8 @@
 
 .container{
 
-	padding:100px;
-	margin:100px;
+	padding:60px;
+	margin:60px;
 	font-family: 'Nanum Gothic', sans-serif;
 	font-weight: 400;
     font-size: 12px;
@@ -55,10 +55,7 @@
 #title_text{
 	padding-top:10px;
 	font-family: 'Nanum Gothic', sans-serif;
-    background-color:none;
-}
-
-
+    background-color:none;}
 
 </style>
 
@@ -80,28 +77,36 @@ $(document).ready(function(){
 
 
 <div class="container">
-	<div class="col-sm-5">
-		<div id="title_text">
-		
-			<h3 style="font-size:30px; text-align:center;">어서오세요!환영합니다!</h3>
-		
-		</div>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2 class="text-center text-dark mt-5"><strong>어서오세요! 환영합니다!</strong></h2>
+        <div class="text-center mb-5 text-dark"></div>
+        <div class="card my-5">
 
-		<form id="login_form">
-			<div class="form-group">
-				<label for="id">ID:</label> <input type="text" class="form-control"
-					id="id" placeholder="Enter ID" name="id">
-			</div>
-			<div class="form-group">
-				<label for="pwd">Password:</label> <input type="password"
-					class="form-control" id="pwd" placeholder="Enter password"
-					name="pwd">
-			</div>
-			<button id="login_btn" class="btn btn-secondary">LOGIN</button>	
-	 <a  id="kakaologin" href="javascript:kakaologin()"><img src="img/kakao_login.png" alt="카카오계정 로그인" style=" weight:40px; height: 40px;"/></a>
-		</form>
-	</div>
-</div>
+          <form class="card-body cardbody-color p-lg-5" id="login_form">
 
+            <div class="text-center">
+              <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                width="200px" alt="profile">
+            </div>
 
+            <div class="mb-3">
+              <input type="text" class="form-control" id="id" aria-describedby="emailHelp"
+                placeholder="Enter ID" name="id">
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+            </div>
+            <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100" id="login_btn">Login</button></div>
+            <div id="emailHelp" class="form-text text-center mb-5 text-dark">회원가입이 아직이신가요? <a href="/register" class="text-dark fw-bold">계정을만들어보세요!</a>
+                <div class="text-dark fw-bold">
+                 <span>KaKao Login:</span>
+            <a  id="kakaologin" href="javascript:kakaologin()"><img src="img/kakao_login.png" alt="카카오계정 로그인" id="kakao_img"/></a>
+            	</div>
+            </div>
+          </form>
+        </div>
 
+      </div>
+    </div>
+  </div>
