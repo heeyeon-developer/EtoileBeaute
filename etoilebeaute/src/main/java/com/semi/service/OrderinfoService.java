@@ -42,8 +42,8 @@ public class OrderinfoService implements MyService<Integer, OrderinfoDTO>{
 		return null;
 	}
 	
-	public List<OrderinfoDTO> orderdetail(int orderinfoid) throws Exception {
-		return mapper.orderdetail(orderinfoid);
+	public List<OrderinfoDTO> orderdetail(int orderid) throws Exception {
+		return mapper.orderdetail(orderid);
 	}
 	
 

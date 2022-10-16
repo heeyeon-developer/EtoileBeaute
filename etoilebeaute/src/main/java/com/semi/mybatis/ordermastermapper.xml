@@ -12,6 +12,9 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	</select>
 	<insert id="insert" parameterType="OrdermasterDTO">
 		INSERT INTO ordermaster VALUES (NULL,#{couponid},#{custid},NOW(),#{cnt},#{total_price})
+		<selectKey keyProperty="orderid" resultType="Integer" order="AFTER"> 
+                SELECT LAST_INSERT_ID()
+      	</selectKey> 
 	</insert>
 	<update id="update" parameterType="OrdermasterDTO">
 		UPDATE ordermaster SET couponid=#{couponid}, custid=#{custid}, orderdate=#{orderdate}, cnt=#{cnt}, total_price=#{total_price} WHERE orderid=#{orderid}

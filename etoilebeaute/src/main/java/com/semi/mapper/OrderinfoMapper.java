@@ -11,5 +11,5 @@ import com.semi.frame.MyMapper;
 @Repository
 @Mapper
 public interface OrderinfoMapper extends MyMapper<Integer, OrderinfoDTO> {
-	public List<OrderinfoDTO> orderdetail(int orderinfoid) throws Exception;
+	public List<OrderinfoDTO> orderdetail(int orderid) throws Exception;
 }

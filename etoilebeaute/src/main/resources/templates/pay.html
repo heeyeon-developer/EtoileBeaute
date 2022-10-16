@@ -6,13 +6,8 @@
 <script>
 $(document).ready(function(){
 	$('#paybtn').click(function(){
-		var custid = '[[${session.logincust.custid}]]';
-		var custname = $('#custname').val();
-		var phone = $('#phone').val();
-		var addr = $('#addr').val();
-		var zipcode = $('#zipcode').val();
-		var detail_addr = $('#detail_addr').val();
-		var pay_op = $('#pay_op').val();
+		var custid = $('#custid').text();
+		alert(custid);
 		location.href="/ordermaster?custid="+custid;
 	});
 	 
@@ -51,7 +46,7 @@ $(document).ready(function(){
                 <div class="col-12 col-lg-12">
                     <div class="cart-title mt-50">
                         <h2>Pay</h2>
-                        <div id="custid" th:text="${custid}" style="display:none"></div>
+                        <div id="custid" th:text="${custid}"></div>
                     </div>
 
    						
@@ -109,10 +104,8 @@ $(document).ready(function(){
 						</div>
 						
                     </form>
-                    
-						<div th:if="${session.logincust != null}">
+                
                     	<button id="paybtn" type="button" class="btn btn-default">결제하기</button>
-                   		</div>
                         
                 </div>
             </div>

@@ -48,10 +48,10 @@ public class PayController {
 		List<PayDTO> pay = null;
 		try {
 			cust = cust_service.get(custid);
-			list = cart_service.get_cartitem(custid);
+			list = cart_service.get_cartitem(custid);//ok
 			post = post_service.getcustpost(custid);
 			pay = pay_service.getpay(custid);
-			
+			model.addAttribute("custid",custid);
 			model.addAttribute("cust", cust);  
 			model.addAttribute("list", list);
 			model.addAttribute("post", post);

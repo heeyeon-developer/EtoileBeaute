@@ -18,11 +18,17 @@ public class OrderinfoController {
 	OrderinfoService service;
 	
 	@RequestMapping("/orderinfo")
-	public String review(Model model, Integer orderinfoid) {
+	public String review(Model model, Integer orderid) {
 		List<OrderinfoDTO> list = null;
+		int total_price = 0;
 		try {
-			list = service.orderdetail(orderinfoid);
+			list = service.orderdetail(orderid);
+			for(OrderinfoDTO info : list)
+				total_price += info.getPrice()*info.getCnt();
 			model.addAttribute("list", list);
+			model.addAttribute("total_price", total_price);
+			model.addAttribute("coupon_name", list.get(0).getCoupon_name());
+			model.addAttribute("rate",list.get(0).getRate());
 			model.addAttribute("center", "orderinfo");
 		} catch (Exception e) {
 			e.printStackTrace();

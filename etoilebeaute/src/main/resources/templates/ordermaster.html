@@ -49,14 +49,14 @@
                                         <span th:text="${#dates.format(li.orderdate, 'yyyy-MM-dd')}"></span>
                                     </td>
                                     <td class="orderid">
-                                        <a th:href="@{/orderinfo(orderinfoid=${li.orderid})}" th:text="${li.orderid}"></a>
+                                        <a th:href="@{/orderinfo(orderid=${li.orderid})}" th:text="${li.orderid}"></a>
                                        
                                     </td>
                                     <td class="cnt">
-                                        <span th:text="${li.cnt}"></span>
+                                        <span th:text="${total_cnt}"></span>
                                     </td>
                                     <td class="price">
-                                        <span th:text="${li.total_price}"></span>
+                                        <span th:text="${total_price}"></span>
                                     </td>
                                 </tr>
                             </tbody>
