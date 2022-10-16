@@ -37,13 +37,18 @@ h5,
 h6 {
   color: #242424;
   line-height: 1.3;
-  font-weight: 400; }
+  font-weight: 400;
+  	font-family: 'Bebas Neue', cursive;
+	font-family: 'Poppins', sans-serif; 
+	font-size:20px;}
 
 p {
   color: #6d6d6d;
-  font-size: 16px;
+  font-size: 25px;
   line-height: 1.9;
-  font-weight: 400; }
+  font-weight: 500; 
+  	font-family: 'Bebas Neue', cursive;
+	font-family: 'Poppins', sans-serif;}
 
 a {
   -webkit-transition: all 500ms ease 0s;
@@ -51,8 +56,11 @@ a {
   text-decoration: none;
   outline: 0 solid transparent;
   color: #131212;
-  font-weight: 400;
-  font-size: 12px; }
+  font-weight: 800;
+  font-size: 20px; 
+ font-family: 'Bebas Neue', cursive;
+	font-family: 'Poppins', sans-serif;}
+  
   a:hover, a:focus {
     -webkit-transition: all 500ms ease 0s;
     transition: all 500ms ease 0s;
@@ -60,20 +68,30 @@ a {
     outline: 0 solid transparent;
     color: #131212;
     font-weight: 400;
-    font-size: 12px; }
+    font-size: 25px; 
+	font-family: 'Bebas Neue', cursive;
+	font-family: 'Poppins', sans-serif;
+  }
 
-
+ #login_fail{
+	
+	padding:100px;
+	margin-top:250px;
+	font-family: 'Bebas Neue', cursive;
+	font-family: 'Poppins', sans-serif;
+	font-size:30px;
+	opacity:0.6;
+}
 
 
 /*����� ����ĭ  */
 #user_info{
 	
-	text-align:left;
+	text-align:center;;
 	font-weight:700;
-	font-size:14px;
+	font-size:15px;
 	font-family: 'Bebas Neue', cursive;
 	font-family: 'Poppins', sans-serif;
-	font-style:italic;
 }
 
 ul,
@@ -86,12 +104,19 @@ ol {
     /*�������� �޴� hover ���� ����  */
 ul li ul li{
 	display:none;
-	font-size:20px;
+	font-size:25px;
 	text-align:center;
-	font-weight: 200;
-  	font-size: 13px;
+	font-weight: 500;
 	text-decoration: none;
 }
+   
+   
+  ul li {
+  
+ 
+  text-align:right;
+  
+  } 
    
     /*�������� �޴� hover  */
  ul li:hover ul li{
@@ -501,7 +526,7 @@ img {
       background-color:black; }
     /* �޴� �׺���̼� �� */
     .main-content-wrapper .header-area .amado-nav li a {
-      font-size: 14px;
+      font-size: 18px;
       text-transform: uppercase;
       position: relative;
       z-index: 1;

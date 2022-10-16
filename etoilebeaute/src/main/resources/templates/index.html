@@ -143,7 +143,7 @@ $(document).ready(function(){
             <!-- Button Group --><!--로그인 하지 않았을때  -->
             <div class="amado-btn-group mt-30 mb-100" th:if="${session.logincust == null}">
                 <a href="/login" class="btn amado-btn mb-15">Login</a>
-                <a href="/register" class="btn amado-btn active">Register</a>
+                <a href="/register" class="btn amado-btn">Register</a>
             </div>
             <!-- Button Group --><!--로그인 성공시  -->
             <div class="amado-btn-group mt-30 mb-100" th:if="${session.logincust != null}">
