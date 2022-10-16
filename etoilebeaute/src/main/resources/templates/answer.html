@@ -1,0 +1,82 @@
+<meta charset="utf-8">
+
+<style>
+#ans_text{
+	font-size: 15px;
+	padding-top: 10px;
+}
+
+#ans_th{
+	align-items: center;
+}
+
+</style>
+
+
+<!-- Search Wrapper Area Start -->
+<div class="search-wrapper section-padding-100">
+    <div class="search-close">
+        <i class="fa fa-close" aria-hidden="true"></i>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="search-content">
+                    <form action="#" method="get">
+                        <input type="search" name="search" id="search" placeholder="Type your keyword...">
+                        <button type="submit"><img src="img/core-img/search.png" alt=""></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Search Wrapper Area End -->
+
+<!-- ##### Main Content Wrapper Start ##### -->
+<div class="cart-table-area section-padding-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-9">
+                    <div class="cart-title mt-50">
+                        <h2>Answer</h2>
+                        <h4>질문에 대한 답변입니다.</h4>
+                        <div id="ansid" th:text="${ansid}" style="display:none"></div>
+                        <div id="questid" th:text="${questid}" style="display:none"></div>
+                    </div>
+	
+	                    <div class="cart-table clearfix">
+	                        <table id="ans_table" class="table table-responsive">
+	                            <thead>
+	                                <tr id="ans_th">
+	                                    <th>답변자</th>
+	                                    <th>제목</th>
+	                                    <th>답변 등록일</th>
+	                                    <th> </th>
+	                                </tr>
+	                            </thead>
+	                            <tbody id="ans_tb">
+	                                <tr th:each="li:${list}">
+	                                    <td th:text="${li.admid}"></td>
+	                                    <td th:text="${li.title}"> </td>
+	                                    <td th:text="${#dates.format(li.rdate, 'yyyy-MM-dd HH:mm')}">답변 등록일</td>
+	                                </tr>
+	                            </tbody>
+	                        </table>
+	                        
+	                        <form id="ans_form">
+                        		<div class="row" th:each="li:${list}">
+		                            
+		                            <div class="col-12 mb-3">
+		                                <textarea id="ans_text" name="comment" class="form-control w-100" cols="20" rows="10" th:value="${li.ans_text}" th:text="${li.ans_text}" readonly="readonly"></textarea>
+		                            </div>
+				                    </div>
+		                    </form>
+                    </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+                <!-- <div th:if="${session.logincust != null}"></div> -->
+</div>
+

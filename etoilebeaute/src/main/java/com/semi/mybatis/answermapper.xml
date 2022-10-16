@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.semi.mapper.AnswerMapper">
+	
+	<select id="select" parameterType="Integer" resultType="AnswerDTO">
+		SELECT * FROM answer WHERE ansid=#{ansid}
+	</select>
+	<select id="selectall" resultType="AnswerDTO">
+		SELECT * FROM answer
+	</select>
+	<insert id="insert" parameterType="AnswerDTO">
+		INSERT INTO answer VALUES (NULL,#{admid},#{questid},#{title},#{ans_text},#{selected},NOW())
+	</insert>
+	<update id="update" parameterType="AnswerDTO">
+		UPDATE answer SET admid=#{admid}, questid=#{questid}, title=#{title}, ans_text=#{ans_text}, selected=#{selected}, rdate=NOW() WHERE ansid=#{ansid}
+	</update>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM answer WHERE ansid=#{ansid}
+	</delete>
+	<select id="select_quest" parameterType="Integer" resultType="AnswerDTO">
+		SELECT * FROM answer WHERE questid=#{questid}
+	</select>
+	
+</mapper>
