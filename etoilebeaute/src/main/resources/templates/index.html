@@ -43,11 +43,6 @@ function printTime() {
 	window.onload = function() { // 페이지가 로딩되면 실행
 	              printTime();
 	};
-	
-
-
-
-
  function getCartCnt(test){
 	$.ajax({
 		url:'/cartcnt?custid='+test,
@@ -56,8 +51,6 @@ function printTime() {
 		}
 	});
 };
- 
-
 function getCouponCnt(coupon){
 	$.ajax({
 		url:'/couponcnt?custid='+coupon,
@@ -66,8 +59,6 @@ function getCouponCnt(coupon){
 		}
 	});
 };
-
-
 $(document).ready(function(){
 	var test= $('#test').text();
 	var coupon = $('#coupon').text();
@@ -76,24 +67,11 @@ $(document).ready(function(){
 			getCartCnt(test);
 			getCouponCnt(coupon);
 			
-		} 
-	
-		
+		}	
 	
 });
-
-
-
 </script>
-
-
-
-
-
-
-
 </head>
-
 <body>
     <!-- Search Wrapper Area Start -->
  
@@ -135,7 +113,6 @@ $(document).ready(function(){
                     	<ul th:if="${session.logincust != null}">
                     	<li><a th:href="@{/ordermaster(custid=${session.logincust.custid})}">Order</a></li>
                     	</ul>
-                    
                     <li><a href="">Ranking</a></li>
                     <li><a href="">Seen</a></li>
                 </ul>
@@ -210,45 +187,17 @@ $(document).ready(function(){
     <!-- ##### Footer Area End ##### -->
 
     <!-- Popper js -->
-    
-  
     <script src="/js/popper.min.js"></script>
     <!-- Bootstrap js -->
-   
-    
-  
     <!-- Plugins js -->
-       
     <script src="/js/plugins.js"></script>
     <!-- Active js -->
-   
  <script src="/js/active.js"></script>
 
   <!-- Trigger the modal with a button -->
   
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title" id="team4">Modal Header</h4>
-        </div>
-        <div class="modal-body" id="team5">
-          <p>성공해주세요.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal"  id="team6">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  
-
 
 
 
