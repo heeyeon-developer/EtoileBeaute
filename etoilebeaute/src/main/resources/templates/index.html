@@ -111,7 +111,7 @@ $(document).ready(function(){
                     <li><a href="/shop">Shop</a></li>
                     
                     	<ul th:if="${session.logincust != null}">
-                    	<li><a th:href="@{/orderview(custid=${session.logincust.custid})}">Order</a></li>  
+                    	<li><a th:href="@{/orderview(custid=${session.logincust.custid})}">Order</a></li>
                     	</ul>
                     <li><a href="/ranking">Ranking</a></li>
                     <li><a href="">Seen</a></li>
