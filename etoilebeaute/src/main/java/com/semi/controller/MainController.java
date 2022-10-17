@@ -61,6 +61,8 @@ public class MainController {
 				if(cust.getPwd().equals(pwd)) {	
 				session.setAttribute("logincust", cust);
 				model.addAttribute("center", "maincenter");
+				}else {
+					model.addAttribute("center", "loginfail");
 				}
 			}
 		} catch (Exception e) {

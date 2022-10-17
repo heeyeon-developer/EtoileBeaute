@@ -113,7 +113,7 @@ $(document).ready(function(){
                     	<ul th:if="${session.logincust != null}">
                     	<li><a th:href="@{/orderview(custid=${session.logincust.custid})}">Order</a></li>  
                     	</ul>
-                    <li><a href="">Ranking</a></li>
+                    <li><a href="/ranking">Ranking</a></li>
                     <li><a href="">Seen</a></li>
                 </ul>
             </nav>
@@ -156,7 +156,6 @@ $(document).ready(function(){
             </div>
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
-                <a href="#" class="fav-nav"><img src="img/core-img/favorites.png" alt=""> Favorite</a>
                 <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Search</a>
             </div>
             <!-- Social Button -->
