@@ -48,10 +48,27 @@ public class OrdermasterController {
 			int i=0;
 			for(CartDTO c : clist) {
 				OrderinfoDTO oi = new OrderinfoDTO(1,orderid,c.getItemid(), 1, c.getCnt(), c.getItemprice(), "", "", "",0, "", 0, 0);
+				System.out.println(c);
 				orderinfo_service.register(oi);
-				System.out.println(i);
+				cart_service.remove(c.getCartid());
 			}
 			
+			List<OrdermasterDTO> list = service.orderlist(custid);
+			
+			model.addAttribute("list", list);
+			model.addAttribute("center", "ordermaster");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		return "index";
+	}
+	
+	@RequestMapping("/orderview")
+	public String orderview(Model model, String custid) {
+		
+		try {			
 			List<OrdermasterDTO> list = service.orderlist(custid);
 			
 			model.addAttribute("list", list);
