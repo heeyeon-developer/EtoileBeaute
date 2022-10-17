@@ -32,23 +32,7 @@ public class CartController {
 		}
 		
 		return "index";
-	}	
-	
-	
-	@RequestMapping("addcart")
-	public Object addcart(String custid, int itemid, int cnt) {
-		String result = "";
-		CartDTO cart = new CartDTO(0,itemid,custid,cnt,"","","","",0);
-		System.out.println(cart);
-		try {
-			service.register(cart);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return result;
-	}	
+	}		
 	
 	@RequestMapping("/deletecart")
 	public String deletecart(Model model, int cart_id, String cust_id) {

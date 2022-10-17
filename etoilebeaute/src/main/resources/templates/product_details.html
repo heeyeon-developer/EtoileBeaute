@@ -5,7 +5,6 @@ $(document).ready(function(){
 		var cust_id = $('#custid').text();
 		var item_id = $('#itemid').text();
 		var item_cnt = $('#cnt').val();
-		alert("click");
 		$.ajax({
 			url:'addcart',
 			data:{
@@ -14,10 +13,9 @@ $(document).ready(function(){
 				'cnt':item_cnt				
 			},
 			success:function(data){
-				alert("상품을 카트에 담았습니다.");//확인 필요
+				alert("상품을 카트에 담았습니다.");
 			}
 		});
-		alert("상품을 카트에 담았습니다.");
 	});
 })
 

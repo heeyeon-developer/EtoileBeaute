@@ -8,9 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.semi.dto.CartDTO;
 import com.semi.dto.CustDTO;
 import com.semi.dto.MarkerDTO;
 import com.semi.mapper.AJAXMapper;
+import com.semi.service.CartService;
 import com.semi.service.CustService;
 import com.semi.service.MarkerService;
 
@@ -25,6 +27,8 @@ public class AjaxController {
 	
 	@Autowired
 	MarkerService service;
+	@Autowired
+	CartService cart_service;
 
 	@RequestMapping({"/checkid"})
 
@@ -108,5 +112,19 @@ public class AjaxController {
 		ja.add(jo1);
 		
 		return ja;
+	}
+	
+	@RequestMapping("/addcart")
+	public Object addcart(String custid, int itemid, int cnt) {
+		String result = "";
+		CartDTO cart = new CartDTO(0,itemid,custid,cnt,"","","","",0);
+		try {
+			cart_service.register(cart);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return result;
 	}
 }

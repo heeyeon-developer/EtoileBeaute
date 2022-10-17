@@ -9,13 +9,6 @@ function del(cart_id){
 	}
 }
 
-$(document).ready(function(){
-	$('#paybtn').click(function(){
-		var custid=$('#custid').text();
-		location.href="/pay?custid="+custid;
-	});
-});
-
 function calcSum() {
   // table element 찾기
   var rows = document.getElementById('cart_table').getElementsByTagName("tr");
@@ -32,6 +25,11 @@ function calcSum() {
 
 $(document).ready(function(){  
 	calcSum();
+	
+	$('#paybtn').click(function(){
+		var custid=$('#custid').text();
+		location.href="/pay?custid="+custid;
+	});
 });
 
 
