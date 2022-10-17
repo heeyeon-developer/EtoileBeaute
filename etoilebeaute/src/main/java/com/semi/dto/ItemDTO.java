@@ -22,4 +22,5 @@ public class ItemDTO {
 	private Date itemdate; 
 	private int stock; 
 	private String detail_img; 
+	private int rank_colname;
 }
