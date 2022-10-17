@@ -106,7 +106,10 @@ $(document).ready(function(){
                                     </td>
                                     <td><a id="quest" href="#" th:onclick="check([[${i.questid}]]);" th:text="${i.title}">id</a></td>
                                     <td th:text="${i.rdate}"></td>
-                                    <td><a th:href="@{/answer(questid=${i.questid})}">답변 여부</a></td>
+                                    <td>
+                                    	<a th:href="@{/answer(questid=${i.questid})}">답변</a>
+                                    	<a th:if="@{/answer(questid=${i.questid})}">답변</a>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		INSERT INTO item VALUES (NULL,#{name},#{price},#{imgname},NOW())
 	</insert>
 	<update id="update" parameterType="itemDTO">
-		UPDATE item SET name=#{name}, price=#{price}, img=#{img}, stock=#{stock} WHERE itemid=#{itemid}
+		UPDATE item SET name=#{name}, price=#{price}, imgname=#{imgname} WHERE ID=#{id}
 	</update>
 	<delete id="delete" parameterType="Integer">
 		DELETE FROM item WHERE id=#{id}
@@ -23,6 +23,13 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT itemid, cateid, name, price, img, itemdate, stock, detail_img FROM item
 		WHERE cateid = #{cateid}
 	</select>
+	<select id="bestitem" resultType="itemDTO">
+		SELECT SUM(oi.cnt), it.itemid, it.name, it.img, oi.cnt, it.price, (SUM(oi.cnt) * it.price) AS total FROM item it
+		INNER JOIN orderinfo oi ON it.itemid = oi.itemid
+		GROUP BY it.itemid
+		ORDER BY SUM(oi.cnt) DESC LIMIT 3;
+	</select>
+
 	
 	
 </mapper>

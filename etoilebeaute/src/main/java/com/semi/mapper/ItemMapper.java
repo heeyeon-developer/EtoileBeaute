@@ -13,4 +13,5 @@ import com.semi.frame.MyMapper;
 public interface ItemMapper extends MyMapper<Integer, ItemDTO> {
 	public List<ItemDTO> itemall(int cateid);
 	public List<ItemDTO> bestitem();
+	
 }
