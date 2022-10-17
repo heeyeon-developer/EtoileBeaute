@@ -1,5 +1,6 @@
 package com.semi.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +41,8 @@ public class OrdermasterController {
 		try {
 			for(CartDTO c: clist) {
 				total_cnt += c.getCnt();
-//				item_service.modify(new ItemDTO(c.getItemid(),0,"",0,"","",(item_service.get(c.getItemid()).getStock() - c.getCnt()),""));
+				ItemDTO item = item_service.get(c.getItemid());
+				item_service.modify(new ItemDTO(c.getItemid(),item.getCateid(),item.getName(),item.getPrice(),item.getImg(),new Date(),(item.getStock() - c.getCnt()),item.getDetail_img()));
 				total_price += c.getItemprice()*c.getCnt();
 			}
 			//먼저 ordermaster에 데이터를 저장하고
