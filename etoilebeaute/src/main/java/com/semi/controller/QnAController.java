@@ -25,14 +25,18 @@ public class QnAController {
 	AnswerService answer_service;
 	
 	@RequestMapping("/qna")
-	public String quest(Model model, Integer itemid, String custid) {
+	public String quest(Model model, Integer itemid, String custid, Integer questid) {
 		List<QuestDTO> list = null;
+		List<AnswerDTO> alist = null;
 		
 		try {
 			list = service.get_itemquest(itemid);
+			alist = answer_service.get_quest(questid);
 			model.addAttribute("itemid",itemid);
 			model.addAttribute("custid",custid);
+			model.addAttribute("questid", questid);
 			model.addAttribute("list",list);
+			model.addAttribute("alist", alist);
 			model.addAttribute("center","quest");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

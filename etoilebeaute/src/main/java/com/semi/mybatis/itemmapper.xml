@@ -27,7 +27,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT SUM(oi.cnt), it.itemid, it.name, it.img, oi.cnt, it.price, (SUM(oi.cnt) * it.price) AS total FROM item it
 		INNER JOIN orderinfo oi ON it.itemid = oi.itemid
 		GROUP BY it.itemid
-		ORDER BY SUM(oi.cnt) DESC LIMIT 3;
+		ORDER BY SUM(oi.cnt) DESC LIMIT 3
 	</select>
 
 	
