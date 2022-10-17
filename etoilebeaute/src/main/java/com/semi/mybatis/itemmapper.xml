@@ -24,10 +24,11 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		WHERE cateid = #{cateid}
 	</select>
 	<select id="bestitem" resultType="itemDTO">
-		SELECT SUM(oi.cnt), it.itemid, it.name, it.img, oi.cnt, it.price, (SUM(oi.cnt) * it.price) AS total FROM item it
-		INNER JOIN orderinfo oi ON it.itemid = oi.itemid
-		GROUP BY it.itemid, oi.cnt
-		ORDER BY SUM(oi.cnt) DESC LIMIT 3
+	SELECT rank () over (order by SUM(oi.cnt) DESC, (SUM(oi.cnt) * it.price) DESC) as rank_colname, 
+	SUM(oi.cnt), it.itemid, it.name, it.img, oi.cnt, it.price, (SUM(oi.cnt) * it.price) AS total FROM item it
+	INNER JOIN orderinfo oi ON it.itemid = oi.itemid
+	GROUP BY it.itemid,oi.cnt
+	ORDER BY SUM(oi.cnt) DESC, total DESC LIMIT 3
 	</select>
 
 	

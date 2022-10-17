@@ -1,24 +1,28 @@
-<section class="ftco-section bg-light">
+<meta charset="utf-8">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<body class="ranking_body">
+<section class="ftco-section bg-light" style="padding-top: 10px;
+    margin-top: 30px;">
     <div class="container">
         <div class="row justify-content-center pb-5 mb-3">
             <div class="col-md-7 heading-section text-center ftco-animate fadeInUp ftco-animated">
                 <h2>&#128202;TOP 3 Ranking!&#128202;</h2>
             </div>
         </div>
-        <div class="row" th:each="li:${list}">
+        <div th:each="li:${list}">
             <div class="col-md-4 ftco-animate fadeInUp ftco-animated">
                 <div class="block-7">
-                    <div class="img" th:src="'img/all/'+${li.img}"></div>
+                    <div class="img_box"><img class="img" th:src="'img/all/'+${li.img}"></div>
                     <div class="text-center p-4">
-                        <span class="excerpt d-block" th:text="${li.name}">Personal</span>
-                        <span class="price"><sup>&#8361; </sup> <span class="number" th:text="${li.price}">49</span> <sub>/mos</sub></span>
-                        <ul class="pricing-text mb-5">
-                            <li><span class="fa fa-check mr-2"></span>5 Dog Walk</li>
-                            <li><span class="fa fa-check mr-2"></span>3 Vet Visit</li>
-                            <li><span class="fa fa-check mr-2"></span>3 Pet Spa</li>
-                            <li><span class="fa fa-check mr-2"></span>Free Supports</li>
-                        </ul>
-                        <a th:href="@{/product_details(itemid=${li.itemid})}" class="btn btn-primary d-block px-2 py-3">Buy Now</a>
+                        <span class="excerpt d-block" th:text="${li.name}"></span>
+                        <span class="price"><sup>&#127775; </sup> <span class="number" th:text="|${li.rank_colname}위|"></span> <sub></sub></span>
+                        <div class="pricing-text mb-5">
+                           <h3 th:text="|&#128181;${li.price}|"> </h3>
+                        <div>
+                        <a th:href="@{/product_details(itemid=${li.itemid})}" class="btn btn-primary d-block px-2 py-3">상품정보 보러가기</a>
                     </div>
                 </div>
             </div>
@@ -57,3 +61,4 @@
         </div>
     </div>
 </section>
+</body>

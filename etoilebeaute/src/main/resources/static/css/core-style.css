@@ -44,7 +44,7 @@ h6 {
 
 p {
   color: #6d6d6d;
-  font-size: 25px;
+  font-size: 18px;
   line-height: 1.9;
   font-weight: 500; 
   	font-family: 'Bebas Neue', cursive;
@@ -74,8 +74,6 @@ a {
   }
 
 /* 랭킹 */
-body{margin-top:20px;
-padding-top:80px;}
 .block-7 {
     border-radius: 4px;
     margin-bottom: 30px;
@@ -1705,15 +1703,6 @@ img {
 }
 
 /* about html */
-.container{
-
-	margin-left:350px;
-	padding:100px;
-	font-weight:400;
-	font-size:middle; 	
-	text-align:center; 
-	margin-bottom: 50px;
-}
 
 #about_img:hover {
     width: 60%;
@@ -1734,13 +1723,13 @@ img {
 
 .container{
 
-	padding:100px;
-	margin:100px;
+	padding:10px;
+	margin:10px;
 	font-family: 'Nanum Gothic', sans-serif;
-	font-weight: 400;
+	font-weight: 800;
 	text-align:center; 
     font-size: 12px;
-    height: 25px;
+    margin-left:20px;
     
 }
 
