@@ -76,6 +76,7 @@ public class OrdermasterController {
 		try {			
 			List<OrdermasterDTO> list = service.orderlist(custid);
 			
+			
 			model.addAttribute("list", list);
 			model.addAttribute("center", "ordermaster");
 		} catch (Exception e) {
