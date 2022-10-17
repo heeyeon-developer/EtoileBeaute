@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.semi.dto.CartDTO;
 import com.semi.dto.CustDTO;
+import com.semi.dto.ItemDTO;
 import com.semi.dto.OrderinfoDTO;
 import com.semi.dto.OrdermasterDTO;
 import com.semi.service.CartService;
 import com.semi.service.CustService;
+import com.semi.service.ItemService;
 import com.semi.service.OrderinfoService;
 import com.semi.service.OrdermasterService;
 
@@ -27,6 +29,8 @@ public class OrdermasterController {
 	CartService cart_service;
 	@Autowired
 	CustService cust_service;
+	@Autowired
+	ItemService item_service;
 	
 	@RequestMapping("/ordermaster")
 	public String review(Model model, String custid) {
@@ -36,6 +40,7 @@ public class OrdermasterController {
 		try {
 			for(CartDTO c: clist) {
 				total_cnt += c.getCnt();
+//				item_service.modify(new ItemDTO(c.getItemid(),0,"",0,"","",(item_service.get(c.getItemid()).getStock() - c.getCnt()),""));
 				total_price += c.getItemprice()*c.getCnt();
 			}
 			//먼저 ordermaster에 데이터를 저장하고
