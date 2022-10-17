@@ -44,7 +44,7 @@ public class OrdermasterController {
 				ItemDTO item = item_service.get(c.getItemid());
 				item_service.modify(new ItemDTO(c.getItemid(),item.getCateid(),item.getName(),item.getPrice(),item.getImg(),new Date(),(item.getStock() - c.getCnt()),item.getDetail_img()));
 				total_price += c.getItemprice()*c.getCnt();
-			}
+			}  
 			//먼저 ordermaster에 데이터를 저장하고
 			OrdermasterDTO om = new OrdermasterDTO(1, 1, custid, null, total_cnt, total_price);
 			service.register(om);
