@@ -63,6 +63,7 @@ public class OrdermasterController {
 			List<OrdermasterDTO> list = service.orderlist(custid);
 			
 			model.addAttribute("list", list);
+			model.addAttribute("custid", custid);
 			model.addAttribute("center", "ordermaster");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -79,6 +80,7 @@ public class OrdermasterController {
 			
 			
 			model.addAttribute("list", list);
+			model.addAttribute("custid", custid);
 			model.addAttribute("center", "ordermaster");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
