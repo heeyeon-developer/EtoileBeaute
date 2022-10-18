@@ -29,6 +29,7 @@ public class OrderinfoController {
 			model.addAttribute("total_price", total_price);
 			model.addAttribute("coupon_name", list.get(0).getCoupon_name());
 			model.addAttribute("rate",list.get(0).getRate());
+			model.addAttribute("coupon_price", (int)(total_price*((100-list.get(0).getRate())*0.01)));
 			model.addAttribute("center", "orderinfo");
 		} catch (Exception e) {
 			e.printStackTrace();
