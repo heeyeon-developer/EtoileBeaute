@@ -58,7 +58,7 @@ function displaymarker(){
 
 function getdata(loc){
 	$.ajax({
-		url : '/getmarker',
+		url : '[[@{/getmarker}]]',
 		data : {'loc' : loc},
 		success : function(data){
 			displaymarker(data);
@@ -86,13 +86,13 @@ $(document).ready(function(){
   <span style="font-size:19px;">충격적일 정도로 매혹적인 이 향수들과 함께 모험을 떠나세요.</span>
   
   <div>
-  <img  id="about_img" src="img/goutal/goutal1.jpg" style="text-align:center;">
+  <img  id="about_img" th:src="@{img/goutal/goutal1.jpg}" style="text-align:center;">
   </div>
 
   <div>
   <p id = "company">"준비가 되었습니까?"</p>
   
-  <img src="img/shoplogo2.png">
+  <img th:src="@{img/shoplogo2.png}">
   
   <p id = "headline" style="line-height: 2.5; font-weight:500;">
      Étoile Beauté. 각각 프랑스어로 "별", "아름다움"이라는 뜻을 가지고 있습니다.
