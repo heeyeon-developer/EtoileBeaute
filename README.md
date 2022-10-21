@@ -13,12 +13,15 @@ Munlti Campus-Semi Project Team 4
 ![](2022-10-21-15-30-15.png)
 
 <br>
-
+ 
 ## 2. 프로젝트 목적
-- MySQL을 이용하여 쇼핑몰 데이터 베이스를 구축하고 Spring Container와 연결하는 세미프로젝트
 
+-  협업을 통해 반응형 쇼핑몰 웹사이트를 구현
+-  향수를 판매하는 웹사이트에 맞는 화면 디자인 및 데이터 베이스 설계
+-  팀원 모두 프론트와 백엔드 프로세스 이해하여 프로젝트 완성
+-  Thymeleaf, MyBatis 를 이용해 동적인 화면 구현
+-  MySQL을 이용하여 쇼핑몰 데이터 베이스를 구축하고 Spring Container와     연결하는      세미프로젝트
 - 자바 개발도구와 통합개발환경(IDE : Intergarated Development Environment) 사용
-
 - ERD Cloud와 Notion, Github을 사용한 협업 경험
 <br>
 <br>
@@ -26,7 +29,7 @@ Munlti Campus-Semi Project Team 4
 ## 3.개발사용도구
 |언어|개발도구|Database|협업도구|Framework|
 |:---:|:---:|:---:|:---:|:---:|
-|Java<br>HTML<br>CSS<Br>JavaScript<br>XML|Eclipse<br>SpringBoot<br>|MySQL|Github<br>Zoom<br>Google Docs<br>Notion<br>ERD Cloud|Thymeleaf<br>Mybatis|
+|Java<br>HTML<br>CSS<Br>JavaScript<br>XML<br>AJAX|Eclipse<br>SpringBoot<br>|MySQL|Github<br>Zoom<br>Google Docs<br>Notion<br>ERD Cloud|Thymeleaf<br>Mybatis|
 <br>
 
 ![](2022-10-21-15-28-30.png)
