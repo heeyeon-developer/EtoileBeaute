@@ -90,12 +90,12 @@ $(document).ready(function(){
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <a class="gallery_img" th:href="@{/img/all/}+${item_detail.img}}">
-                                        <img class="d-block w-100" th:src="@{/img/all/}+${item_detail.img}" alt="First slide">
+                                    <a class="gallery_img" th:href="@{|/img/all/${item_detail.img}|}">
+                                        <img class="d-block w-100" th:src="@{|/img/all/${item_detail.img}|}" alt="First slide">
                                     </a>
                                 </div>
                                 <div class="carousel-item">
-                                    <a class="gallery_img" th:href="{/img/all/item_img1.jpg}">
+                                    <a class="gallery_img" th:href="@{/img/all/item_img1.jpg}">
                                         <img class="d-block w-100" th:src="@{/img/all/item_img1.jpg}" alt="Second slide">
                                     </a>
                                 </div>
