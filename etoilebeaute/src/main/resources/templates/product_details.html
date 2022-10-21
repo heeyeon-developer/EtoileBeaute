@@ -6,7 +6,7 @@ $(document).ready(function(){
 		var item_id = $('#itemid').text();
 		var item_cnt = $('#cnt').val();
 		$.ajax({
-			url:'addcart',
+			url:'[[@{/addcart}]]',
 			data:{
 				'custid':cust_id,
 				'itemid':item_id,
@@ -33,7 +33,7 @@ $(document).ready(function(){
                 <div class="search-content">
                     <form action="#" method="get">
                         <input type="search" name="search" id="search" placeholder="Type your keyword...">
-                        <button type="submit"><img src="img/core-img/search.png" alt=""></button>
+                        <button type="submit"><img th:src="@{img/core-img/search.png}" alt=""></button>
                     </form>
                 </div>
             </div>
@@ -49,7 +49,7 @@ $(document).ready(function(){
     <div class="mobile-nav">
         <!-- Navbar Brand -->
         <div class="amado-navbar-brand">
-            <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+            <a th:href="@{index}"><img th:src="@{img/core-img/logo.png}" alt=""></a>
         </div>
         <!-- Navbar Toggler -->
         <div class="amado-navbar-toggler">
@@ -66,8 +66,8 @@ $(document).ready(function(){
                 <div class="col-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mt-50">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="/shop">SHOP</a></li>
+                            <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+                            <li class="breadcrumb-item"><a th:href="@{/shop}">SHOP</a></li>
                             <li class="breadcrumb-item active" aria-current="page" th:text="${item_detail.name}"></li>
                         </ol>
                     </nav>
@@ -90,23 +90,23 @@ $(document).ready(function(){
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <a class="gallery_img" th:href="@{'img/all/'+${item_detail.img}}">
-                                        <img class="d-block w-100" th:src="'img/all/'+${item_detail.img}" alt="First slide">
+                                    <a class="gallery_img" th:href="@{/img/all/}+${item_detail.img}}">
+                                        <img class="d-block w-100" th:src="@{/img/all/}+${item_detail.img}" alt="First slide">
                                     </a>
                                 </div>
                                 <div class="carousel-item">
-                                    <a class="gallery_img" href="img/all/item_img1.jpg">
-                                        <img class="d-block w-100" src="img/all/item_img1.jpg" alt="Second slide">
+                                    <a class="gallery_img" href="/img/all/item_img1.jpg">
+                                        <img class="d-block w-100" src="/img/all/item_img1.jpg" alt="Second slide">
                                     </a>
                                 </div>
                                 <div class="carousel-item">
-                                    <a class="gallery_img" href="img/all/item_img4.jpg">
-                                        <img class="d-block w-100" src="img/all/item_img4.jpg" alt="Third slide">
+                                    <a class="gallery_img" href="/img/all/item_img4.jpg">
+                                        <img class="d-block w-100" src="/img/all/item_img4.jpg" alt="Third slide">
                                     </a>
                                 </div>
                                 <div class="carousel-item">
-                                    <a class="gallery_img" href="img/all/item_img3.jpg">
-                                        <img class="d-block w-100" src="img/all/item_img3.jpg" alt="Fourth slide">
+                                    <a class="gallery_img" href="/img/all/item_img3.jpg">
+                                        <img class="d-block w-100" src="/img/all/item_img3.jpg" alt="Fourth slide">
                                     </a>
                                 </div>
                             </div>
@@ -119,7 +119,7 @@ $(document).ready(function(){
                         <div class="product-meta-data">
                             <div class="line"></div>
                             <p th:text="'&#8361; '+${item_detail.price}" class="product-price"></p>
-                            <a href="/product_details">
+                            <a th:href="@{/product_details}">
                                 <h6 th:text="${item_detail.name}"></h6>
                             </a>
                             <!-- Ratings & Review -->
@@ -165,7 +165,7 @@ $(document).ready(function(){
             </div>
 	            <form>
 	                	<hr>
-	                    <img th:src="'img/all/'+${item_detail.detail_img}">
+	                    <img th:src="@{/img/all/}+${item_detail.detail_img}">
 				</form>
         </div>
     </div>

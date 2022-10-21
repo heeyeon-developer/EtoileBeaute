@@ -58,7 +58,7 @@
                                         <span th:th:text="${li.orderinfoid}"></span>
                                     </td>
                                 	<td class="orderimg">
-                                        <img th:src="'img/all/'+${li.img}">
+                                        <img th:src="@{img/all/}+${li.img}">
                                     </td>
                                     <td class="itemname">
                                         <span th:text="${li.name}"></span>

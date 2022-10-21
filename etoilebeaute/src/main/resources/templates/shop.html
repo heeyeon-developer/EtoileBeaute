@@ -3,7 +3,7 @@
 function addcart(cust_id, item_id){
 	
 	$.ajax({
-		url:'addcart',
+		url:'[[@{/addcart}]]',
 		data:{
 			'custid':cust_id,
 			'itemid':item_id,
@@ -71,35 +71,35 @@ function addcart(cust_id, item_id){
                 <div class="catagories-menu">
                     <ul>
                     <form id="perfume_form">
-                        <li class="active"><a href="#">Perfumes</a>
+                        <li class="active"><a th:href="@{#}">Perfumes</a>
                         	<ul>
-                        		<li><a id="aesop_btn" href="/per_aesop">Aesop</a></li>
-                        		<li><a id="jo_btn" href="/per_jomalone">Jo malone</a></li>
-                        		<li><a id="maison_btn" href="/per_maison">Maison Margiela</a></li>
-                        		<li><a id="santa_btn" href="/per_santa">SantaMaria Novella</a></li>
-                        		<li><a id="goutal_btn" href="/per_goutal">Goutal Paris</a></li>
+                        		<li><a id="aesop_btn" th:href="@{/per_aesop}">Aesop</a></li>
+                        		<li><a id="jo_btn" th:href="@{/per_jomalone}">Jo malone</a></li>
+                        		<li><a id="maison_btn" th:href="@{/per_maison}">Maison Margiela</a></li>
+                        		<li><a id="santa_btn" th:href="@{/per_santa}">SantaMaria Novella</a></li>
+                        		<li><a id="goutal_btn" th:href="@{/per_goutal}">Goutal Paris</a></li>
                         	</ul>           
                         </li>
                     </form>
                     
                     <form id="body_form">
-                        <li class="active"><a href="#">Body & Hand</a>
+                        <li class="active"><a th:href="@{#}">Body & Hand</a>
 	                        <ul>
-	                        		<li><a id="aesop_btn" href="/body_aesop">Aesop</a></li>
-	                        		<li><a id="jo_btn" href="/body_jomalone">Jo malone</a></li>
-	                        		<li><a id="maison_btn" href="/body_maison">Maison Margiela</a></li>
-	                        		<li><a id="santa_btn" href="/body_santa">SantaMaria Novella</a></li>
+	                        		<li><a id="aesop_btn" th:href="@{/body_aesop}">Aesop</a></li>
+	                        		<li><a id="jo_btn" th:href="@{/body_jomalone}">Jo malone</a></li>
+	                        		<li><a id="maison_btn" th:href="@{/body_maison}">Maison Margiela</a></li>
+	                        		<li><a id="santa_btn" th:href="@{/body_santa}">SantaMaria Novella</a></li>
 	                        </ul>
                         </li>
                     </form>
                     
                     
                     <form id="cand_form">
-                        <li class="active"><a href="#">Candle & Diffuser</a>
+                        <li class="active"><a t:href="@{#}">Candle & Diffuser</a>
 	                        <ul>
-	                        		<li><a id="aesop_btn" href="/cand_aesop">Aesop</a></li>
-	                        		<li><a id="jo_btn" href="/cand_jomalone">Jo malone</a></li>
-	                        		<li><a id="maison_btn" href="/cand_maison">Maison Margiela</a></li>
+	                        		<li><a id="aesop_btn" th:href="@{/cand_aesop}">Aesop</a></li>
+	                        		<li><a id="jo_btn" th:href="@{/cand_jomalone}">Jo malone</a></li>
+	                        		<li><a id="maison_btn" th:href="@{/cand_maison}">Maison Margiela</a></li>
 	                        </ul>
                         </li>
 					</form>
@@ -134,8 +134,8 @@ function addcart(cust_id, item_id){
                             <div class="total-products">
                                 <p>Showing 1-8 0f 25</p>
                                 <div class="view d-flex">
-                                    <a href="#"><i class="fa fa-th-large" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                                    <a th:href="@{#}"><i class="fa fa-th-large" aria-hidden="true"></i></a>
+                                    <a th:href="@{#}"><i class="fa fa-bars" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                             <!-- Sorting -->
@@ -175,10 +175,10 @@ function addcart(cust_id, item_id){
                             <!-- Product Image -->
                             <a th:href="@{/product_details(itemid=${sh.itemid})}">
                             	<div class="product-img">
-                                	<img th:src="'img/all/'+${sh.img}" alt="">
+                                	<img th:src="@{/img/all/}+${sh.img}" alt="">
                                 
                                 	<!-- Hover Thumb -->
-                                	<img class="hover-img" th:src="'img/all/'+${sh.img}" alt="">
+                                	<img class="hover-img" th:src="@{/img/all/}+${sh.img}" alt="">
                             	</div>
 							</a>
 							
@@ -223,9 +223,9 @@ function addcart(cust_id, item_id){
                             <!-- Product Image -->
                             <a th:href="@{/product_details(itemid=${it.itemid})}">
 	                            <div class="product-img">
-	                                <img th:src="'img/aesop/'+${it.img}" alt="">
+	                                <img th:src="@{/img/aesop/}+${it.img}" alt="">
 	                                <!-- Hover Thumb -->
-	                                <img class="hover-img" th:src="'img/aesop/'+${it.img}" alt="">
+	                                <img class="hover-img" th:src="@{/img/aesop/}+${it.img}" alt="">
 	                            </div>
 	                        </a>
 
@@ -269,9 +269,9 @@ function addcart(cust_id, item_id){
                             <!-- Product Image -->
                             <a th:href="@{/product_details(itemid=${it.itemid})}">
 	                            <div class="product-img">
-	                                <img th:src="'img/jomalone/'+${it.img}" alt="">
+	                                <img th:src="@{/img/jomalone/}+${it.img}" alt="">
 	                                <!-- Hover Thumb -->
-	                                <img class="hover-img" th:src="'img/jomalone/'+${it.img}" alt="">
+	                                <img class="hover-img" th:src="@{/img/jomalone/}+${it.img}" alt="">
 	                            </div>
 	                        </a>
 
@@ -313,9 +313,9 @@ function addcart(cust_id, item_id){
                             <!-- Product Image -->
                             <a th:href="@{/product_details(itemid=${it.itemid})}">
 	                            <div class="product-img">
-	                                <img th:src="'img/maison/'+${it.img}" alt="">
+	                                <img th:src="@{/img/maison/}+${it.img}" alt="">
 	                                <!-- Hover Thumb -->
-	                                <img class="hover-img" th:src="'img/maison/'+${it.img}" alt="">
+	                                <img class="hover-img" th:src="@{/img/maison/}+${it.img}" alt="">
 	                            </div>
 	                        </a>
 
@@ -357,9 +357,9 @@ function addcart(cust_id, item_id){
                             <!-- Product Image -->
                             <a th:href="@{/product_details(itemid=${it.itemid})}">
 	                            <div class="product-img">
-	                                <img th:src="'img/santa/'+${it.img}" alt="">
+	                                <img th:src="@{/img/santa/}+${it.img}" alt="">
 	                                <!-- Hover Thumb -->
-	                                <img class="hover-img" th:src="'img/santa/'+${it.img}" alt="">
+	                                <img class="hover-img" th:src="@{/img/santa/}+${it.img}" alt="">
 	                            </div>
 	                        </a>
 
@@ -401,9 +401,9 @@ function addcart(cust_id, item_id){
                             <!-- Product Image -->
                             <a th:href="@{/product_details(itemid=${it.itemid})}">
 	                            <div class="product-img">
-	                                <img th:src="'img/goutal/'+${it.img}" alt="">
+	                                <img th:src="@{/img/goutal/}+${it.img}" alt="">
 	                                <!-- Hover Thumb -->
-	                                <img class="hover-img" th:src="'img/goutal/'+${it.img}" alt="">
+	                                <img class="hover-img" th:src="@{/img/goutal/}+${it.img}" alt="">
 	                            </div>
 	                        </a>
 
@@ -444,9 +444,9 @@ function addcart(cust_id, item_id){
                             <!-- Product Image -->
                             <a th:href="@{/product_details(itemid=${it.itemid})}">
 	                            <div class="product-img">
-	                                <img th:src="'img/aesop/'+${it.img}" alt="">
+	                                <img th:src="@{/img/aesop/}+${it.img}" alt="">
 	                                <!-- Hover Thumb -->
-	                                <img class="hover-img" th:src="'img/aesop/'+${it.img}" alt="">
+	                                <img class="hover-img" th:src="@{/img/aesop/}+${it.img}" alt="">
 	                            </div>
 	                        </a>
 
@@ -487,9 +487,9 @@ function addcart(cust_id, item_id){
                             <!-- Product Image -->
                             <a th:href="@{/product_details(itemid=${it.itemid})}">
 	                            <div class="product-img">
-	                                <img th:src="'img/jomalone/'+${it.img}" alt="">
+	                                <img th:src="@{/img/jomalone/}+${it.img}" alt="">
 	                                <!-- Hover Thumb -->
-	                                <img class="hover-img" th:src="'img/jomalone/'+${it.img}" alt="">
+	                                <img class="hover-img" th:src="@{/img/jomalone/}+${it.img}" alt="">
 	                            </div>
 	                        </a>
 
@@ -530,9 +530,9 @@ function addcart(cust_id, item_id){
                             <!-- Product Image -->
                             <a th:href="@{/product_details(itemid=${it.itemid})}">
 	                            <div class="product-img">
-	                                <img th:src="'img/maison/'+${it.img}" alt="">
+	                                <img th:src="@{/img/maison/}+${it.img}" alt="">
 	                                <!-- Hover Thumb -->
-	                                <img class="hover-img" th:src="'img/maison/'+${it.img}" alt="">
+	                                <img class="hover-img" th:src="@{/img/maison/}+${it.img}" alt="">
 	                            </div>
 	                        </a>
 
@@ -573,9 +573,9 @@ function addcart(cust_id, item_id){
                             <!-- Product Image -->
                             <a th:href="@{/product_details(itemid=${it.itemid})}">
 	                            <div class="product-img">
-	                                <img th:src="'img/santa/'+${it.img}" alt="">
+	                                <img th:src="@{/img/santa/}+${it.img}" alt="">
 	                                <!-- Hover Thumb -->
-	                                <img class="hover-img" th:src="'img/santa/'+${it.img}" alt="">
+	                                <img class="hover-img" th:src="@{/img/santa/}+${it.img}" alt="">
 	                            </div>
 	                        </a>
 
@@ -616,9 +616,9 @@ function addcart(cust_id, item_id){
                             <!-- Product Image -->
                             <a th:href="@{/product_details(itemid=${it.itemid})}">
 	                            <div class="product-img">
-	                                <img th:src="'img/aesop/'+${it.img}" alt="">
+	                                <img th:src="@{/img/aesop/}+${it.img}" alt="">
 	                                <!-- Hover Thumb -->
-	                                <img class="hover-img" th:src="'img/aesop/'+${it.img}" alt="">
+	                                <img class="hover-img" th:src="@{/img/aesop/}+${it.img}" alt="">
 	                            </div>
 	                        </a>
 
@@ -659,9 +659,9 @@ function addcart(cust_id, item_id){
                             <!-- Product Image -->
                             <a th:href="@{/product_details(itemid=${it.itemid})}">
 	                            <div class="product-img">
-	                                <img th:src="'img/jomalone/'+${it.img}" alt="">
+	                                <img th:src="@{/img/jomalone/}+${it.img}" alt="">
 	                                <!-- Hover Thumb -->
-	                                <img class="hover-img" th:src="'img/jomalone/'+${it.img}" alt="">
+	                                <img class="hover-img" th:src="@{/img/jomalone/}+${it.img}" alt="">
 	                            </div>
 	                        </a>
 
@@ -702,9 +702,9 @@ function addcart(cust_id, item_id){
                             <!-- Product Image -->
                             <a th:href="@{/product_details(itemid=${it.itemid})}">
 	                            <div class="product-img">
-	                                <img th:src="'img/maison/'+${it.img}" alt="">
+	                                <img th:src="@{/img/maison/}+${it.img}" alt="">
 	                                <!-- Hover Thumb -->
-	                                <img class="hover-img" th:src="'img/maison/'+${it.img}" alt="">
+	                                <img class="hover-img" th:src="@{/img/maison/}+${it.img}" alt="">
 	                            </div>
 	                        </a>
 
