@@ -6,7 +6,7 @@ $(document).ready(function(){
 		var itemid = $('#itemid').text();
 		var title = $('#title').val();
 		var quest_text = $('#quest_text').val();
-		location.href="/registerquest?custid="+custid+"&itemid="+itemid+"&title="+title+"&quest_text="+quest_text;
+		location.href="[[@{/registerquest?custid=}]]"+custid+"[[@{&itemid=}]]"+itemid+"[[@{&title=}]]"+title+"[[@{&quest_text=}]]"+quest_text;
 	});
 	
 	

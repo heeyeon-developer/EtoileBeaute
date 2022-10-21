@@ -7,7 +7,7 @@
 $(document).ready(function(){
 	$('#paybtn').click(function(){
 		var custid = $('#custid').text();
-		location.href="/ordermaster?custid="+custid;
+		location.href="[[@{/ordermaster?custid=}]]"+custid;
 	});
 	 
 });
@@ -28,7 +28,7 @@ $(document).ready(function(){
                 <div class="search-content">
                     <form action="#" method="get">
                         <input type="search" name="search" id="search" placeholder="Type your keyword...">
-                        <button type="submit"><img src="img/core-img/search.png" alt=""></button>
+                        <button type="submit"><img th:src="@{img/core-img/search.png}" alt=""></button>
                     </form>
                 </div>
             </div>
@@ -62,7 +62,7 @@ $(document).ready(function(){
                             <tbody>
                                 <tr th:each="li:${list}">
                                     <td class="cart_product_img">
-                                        <a href="#"><img th:src="|img/all/${li.itemimg}|" alt="Product" id="img" width="100px"></a>
+                                        <a th:href="@{#}"><img th:src="@{|img/all/${li.itemimg}|}" alt="Product" id="img" width="100px"></a>
                                     </td>
                                     <td class="cart_product_desc" th:text="${li.itemname}" id="itemname"></td>
                                     <td class="qty" th:text="${li.cnt}" id="cnt"></td>
