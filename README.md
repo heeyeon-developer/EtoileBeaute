@@ -58,7 +58,8 @@ Munlti Campus-Semi Project Team 4
 - 주문 상세 조회
 
 - 최다 판매 상품 랭킹 조회
-
+<br>
+<br>
 
 ![](2022-10-21-15-29-41.png)
 
@@ -73,40 +74,42 @@ Munlti Campus-Semi Project Team 4
 | 이름 |<center>역할|
 | :---: |---|
 |김희연|<center>고객리뷰기능구현(별점표시),상품 QNA기능 구현, 주문,결제 기능 구현 |
-|김준기|<center>MainPage구현,로그인기능,랭킹페이지, 전체 Front-End 기능 구현||
+|김준기|<center>MainPage구현,로그인기능,랭킹페이지, 전체 Front-End 기능 작업||
 |박재형|<center>회원가입기능, 회사소개 페이기 구현|
 |배단비|<center>장바구니,상품상세페이지,상품조회,랭킹,주문 기능 구현|
 |공통|<center>ERD 설계 및 각 테이블 DTO,CRUD 구현|
 <br>
 
 ## 6.프로젝트 수행기간 
+<br>
 
 ![](2022-10-21-15-28-53.png)
 
 <br>
 
 ## 7. 데이터베이스 설계
+<br>
 
-![](2022-10-21-15-29-09.png)
+![](2022-10-21-16-00-57.png)
 
 <br>
 
 ## 8. 웹 쇼핑몰 구현 화면
+<br>
 
 
-![화면](https://user-images.githubusercontent.com/111727491/197131243-a44d0c88-41b5-440d-b21e-70fd8a94a80b.gif)
-
+![녹화움짤](https://user-images.githubusercontent.com/111727491/197132973-350cb407-2d6f-4e42-9b58-c273f0960144.gif)
 
 <br>
 <br>
 
 ## 9.트러블슈팅 💥
 
-| 이름 |<center>발생오류 | 해결방법|
+| 이름 |<center>발생오류 |<center> 해결방법|
 | :---: |---|---|
-|김희연|<center>| |
+|김희연|<center>결재 페이지에서 주문 페이지로 넘어갈 때에 url 정의가 잘못되어 주문을 조회시에도 매번 주문이 중복되어 발생하는 문제가 존재|결재페이지에서 주문 페이지로 넘어가는 경우와 주문 조회를 할 경우의 url을 분리하여 해결 |
 |박재형|<center>||
-|김준기|<center>||
+|김준기|<center>전체 css파일이 하나로 묶여있어 세부 항목 조율이 어려웠음. 또한 style 구문이 적용이 안되는 현상 발생|클래스별로 css 구문을 나누어  core-style부분 수정으로 새로 작성하여 해결|
 |배단비|<center>| |
 |공통|<center>| |
 
