@@ -16,17 +16,17 @@
     <title>	Étoile Beauté - Perfume&Fragnace Shop | Home</title>
 
     <!-- Favicon  -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" th:href="@{img/core-img/favicon.ico}">
 
     <!-- Core Style CSS -->
-    <link rel="stylesheet" href="css/core-style.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" th:href="@{css/core-style.css}">
+    <link rel="stylesheet" th:href="@{style.css}">
    
 
 
     <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
-    <script src="/js/jquery/jquery-2.2.4.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script th:src="@{/js/jquery/jquery-2.2.4.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
 
 <script>
 
@@ -45,7 +45,7 @@ function printTime() {
 	};
  function getCartCnt(test){
 	$.ajax({
-		url:'/cartcnt?custid='+test,
+		url:'[[@{/cartcnt?custid=}]]'+test,
 		success:function(data){
 			$('#cart_cnt').text(data);
 		}
@@ -53,7 +53,7 @@ function printTime() {
 };
 function getCouponCnt(coupon){
 	$.ajax({
-		url:'/couponcnt?custid='+coupon,
+		url:'[[@{/couponcnt?custid=}]]'+coupon,
 		success:function(data){
 			$('#coupon_cnt').text(data);
 		}
@@ -84,7 +84,7 @@ $(document).ready(function(){
         <div class="mobile-nav">
             <!-- Navbar Brand -->
             <div class="amado-navbar-brand">
-                <a href="/"><img src="img/shoplogo2.png" alt=""></a>
+                <a th:href="@{/}"><img th:src="@{img/shoplogo2.png}" alt=""></a>
             </div>
             <!-- Navbar Toggler -->
             <div class="amado-navbar-toggler">
@@ -101,28 +101,28 @@ $(document).ready(function(){
             </div>
             <!-- Logo -->
             <div class="logo">
-                <a href="/"><img src="img/shoplogo2.png" alt=""></a>
+                <a th:href="@{/}"><img th:src="@{img/shoplogo2.png}" alt=""></a>
             </div>
             <!-- Amado Nav -->
             <nav class="amado-nav">
                 <ul>
-                    <li class="active"><a href="/">Home</a></li>
-                    <li><a href="/about">About</a>
-                    <li><a href="/shop">Shop</a></li>
+                    <li class="active"><a th:href="@{/}">Home</a></li>
+                    <li><a th:href="@{/about}">About</a>
+                    <li><a th:href="@{/shop}">Shop</a></li>
                     
                     	<ul th:if="${session.logincust != null}">
                     	<li><a th:href="@{/orderview(custid=${session.logincust.custid})}">Order</a></li>
                     	</ul>
-                    <li><a href="/ranking">Ranking</a></li>
+                    <li><a th:href="@{/ranking}">Ranking</a></li>
                 </ul>
             </nav>
             <!-- Button Group --><!--로그인 하지 않았을때  -->
             <div class="amado-btn-group mt-30 mb-100" th:if="${session.logincust == null}">
-                <a href="/login" class="btn amado-btn mb-15">Login</a>
+                <a th:href="@{/login}" class="btn amado-btn mb-15">Login</a>
             </div>
             <!-- Button Group --><!--로그인 성공시  -->
             <div class="amado-btn-group mt-30 mb-100" th:if="${session.logincust != null}">
-                <a href="/logout" class="btn amado-btn mb-15">Logout</a>   
+                <a th:href="@{/logout}" class="btn amado-btn mb-15">Logout</a>   
             </div>
             <div class="amado-btn-group mt-30 mb-100" th:if="${session.logincust != null}">
             	<p style="text-align:center;">😀😀😀</p>
@@ -183,12 +183,12 @@ $(document).ready(function(){
     <!-- ##### Footer Area End ##### -->
 
     <!-- Popper js -->
-    <script src="/js/popper.min.js"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
     <!-- Bootstrap js -->
     <!-- Plugins js -->
-    <script src="/js/plugins.js"></script>
+    <script th:src="@{/js/plugins.js}"></script>
     <!-- Active js -->
- <script src="/js/active.js"></script>
+ <script th:src="@{/js/active.js}"></script>
 
   <!-- Trigger the modal with a button -->
   

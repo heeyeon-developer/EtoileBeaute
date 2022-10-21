@@ -16,7 +16,7 @@
         <div th:each="li:${list}">
             <div class="col-md-4 ftco-animate fadeInUp ftco-animated">
                 <div class="block-7">
-                    <div class="img_box"><img class="img" th:src="'img/all/'+${li.img}"></div>
+                    <div class="img_box"><img class="img" th:src="@{img/all/}+${li.img}"></div>
                     <div class="text-center p-4">
                         <span class="excerpt d-block" th:text="${li.name}"></span>
                         <span class="price"><sup>&#127775; </sup> <span class="number" th:text="|${li.rank_colname}위|"></span> <sub></sub></span>
