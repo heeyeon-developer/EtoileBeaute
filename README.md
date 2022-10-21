@@ -10,7 +10,9 @@ Munlti Campus-Semi Project Team 4
 <br>
 <br>
 
+![](2022-10-21-15-30-15.png)
 
+<br>
 ## 2. 프로젝트 목적
 - MySQL을 이용하여 쇼핑몰 데이터 베이스를 구축하고 Spring Container와 연결하는 세미프로젝트
 
@@ -26,8 +28,8 @@ Munlti Campus-Semi Project Team 4
 |Java<br>HTML<br>CSS<Br>JavaScript<br>XML|Eclipse<br>SpringBoot<br>|MySQL|Github<br>Zoom<br>Google Docs<br>Notion<br>ERD Cloud|Thymeleaf<br>Mybatis|
 <br>
 
+![](2022-10-21-15-28-30.png)
 
-![](2022-10-21-14-08-12.png)
 <br>
 <br>
 
@@ -57,7 +59,7 @@ Munlti Campus-Semi Project Team 4
 - 최다 판매 상품 랭킹 조회
 
 
-![](2022-10-21-14-30-09.png)
+![](2022-10-21-15-29-41.png)
 
 
 
@@ -78,13 +80,13 @@ Munlti Campus-Semi Project Team 4
 
 ## 6.프로젝트 수행기간 
 
-![](2022-10-21-13-45-59.png)
+![](2022-10-21-15-28-53.png)
 
 <br>
 
 ## 7. 데이터베이스 설계
 
-![](2022-10-21-14-15-41.png)
+![](2022-10-21-15-29-09.png)
 
 <br>
 
